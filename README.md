@@ -1,7 +1,11 @@
 # SpriteGrabber
 ### Utility to help sprite-grabbing process
 
+### Disclaimer
+
 _Please understand that grabbing pictures or graphics elements from another software by any means (included this application) in some circustances may be recognized as an unlawful act._
+
+### Forewords
 
 The refactoring of an old game is an endless and somewhat difficult job, one of the most tiring a frustrating part of this work is IMHO  the recovery of original graphics elements.
 
