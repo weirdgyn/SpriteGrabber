@@ -54,9 +54,9 @@ Once you're satisfied of the sprite collection you can click on _Save_ button an
 
 Besides which emulator you will use and which format you'll be going to use for the graphic source the success of the grabbing will mostly depend on the correct collection of frames. These are some rules I'm using to setup a good graphic source as a base for sprite grabbing:
 
-- If possibile select levels or portion of levels where the background is uniform and not _changing/moving_;
-- If possible move sprite (or trigger it to move or wait for it to move) on uniform background;
-- Try to have frames where the sprite is placed in non overlapping positions;
+- Select levels or portion of levels where the background is uniform and not _changing/moving_;
+- Move sprite (or trigger it to move or wait for it to move) on uniform background;
+- Try to collect frames where the sprite is placed in NON overlapping positions;
 - If the game has different scrolling directions try to record a sequence where the direction is uniform.
 
 ### Build
