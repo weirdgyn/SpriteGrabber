@@ -68,6 +68,16 @@ Just download/clone the project with [github](https://github.com/) and then open
 I'm using the SprinterMNG library from Sprinter Publishing to handle `.mng` pictures bundles.
 SprinterMNG Copyright © Sprinter Publishing 2009.
 
+### TODO
+
+- Drag & drop support;
+- Handle `.zip` pictures bundle as graphics source format;
+- Equalize sprite format before saving collection;
+- Better layout;
+- Preview sprite collection animation;
+- Change order in sprites collection;
+- More _smartness_ in sprite grabbing procedure.
+
 ### References
 
 _MAME:_
