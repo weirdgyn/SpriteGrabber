@@ -91,6 +91,7 @@
             // 
             // txtBundleFile
             // 
+            this.txtBundleFile.AllowDrop = true;
             this.txtBundleFile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBundleFile.Location = new System.Drawing.Point(91, 4);
@@ -98,6 +99,8 @@
             this.txtBundleFile.ReadOnly = true;
             this.txtBundleFile.Size = new System.Drawing.Size(696, 20);
             this.txtBundleFile.TabIndex = 2;
+            this.txtBundleFile.DragDrop += new System.Windows.Forms.DragEventHandler(this.txtBundleFile_DragDrop);
+            this.txtBundleFile.DragEnter += new System.Windows.Forms.DragEventHandler(this.txtBundleFile_DragEnter);
             // 
             // label1
             // 

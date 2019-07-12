@@ -308,5 +308,34 @@ namespace SpriteGrabber
             Hide();
             splashForm.Show();
         }
+
+        private void txtBundleFile_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] data = (string[])e.Data.GetData("FileName");
+
+            txtBundleFile.Text = data[0];
+
+            LoadFile();
+        }
+
+        private void txtBundleFile_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent("FileName"))
+            {
+                string[] data = (string[])e.Data.GetData("FileName");
+
+                if (data!=null && data.Length>0 && !String.IsNullOrWhiteSpace(data[0]))
+                {
+                    string extension = System.IO.Path.GetExtension(data[0]).ToLower();
+                    if (extension.Equals(".mng") || extension.Equals(".avi"))
+                    {
+                        e.Effect = DragDropEffects.Copy;
+                        return;
+                    }
+                }
+            }
+
+            e.Effect = DragDropEffects.None;
+        }
     }
 }
