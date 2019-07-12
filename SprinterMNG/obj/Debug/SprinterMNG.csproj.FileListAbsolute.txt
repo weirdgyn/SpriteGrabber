@@ -1,0 +1,6 @@
+C:\Users\weird.TUX\source\repos\SpriteGrabber\SprinterMNG\bin\Debug\SprinterMNG.dll
+C:\Users\weird.TUX\source\repos\SpriteGrabber\SprinterMNG\bin\Debug\SprinterMNG.pdb
+C:\Users\weird.TUX\source\repos\SpriteGrabber\SprinterMNG\obj\Debug\SprinterMNG.csprojAssemblyReference.cache
+C:\Users\weird.TUX\source\repos\SpriteGrabber\SprinterMNG\obj\Debug\SprinterMNG.csproj.CoreCompileInputs.cache
+C:\Users\weird.TUX\source\repos\SpriteGrabber\SprinterMNG\obj\Debug\SprinterMNG.dll
+C:\Users\weird.TUX\source\repos\SpriteGrabber\SprinterMNG\obj\Debug\SprinterMNG.pdb
