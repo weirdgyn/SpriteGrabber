@@ -14,8 +14,8 @@ __Please NOTE that this application is still a work in progress and it's long to
 Before your first run please read the following recomendations:
 
 This application need a graphic source where to pick the elments to grab. At this stage these sources can be:
-- MNG bundle file;
-- AVI file.
+- `MNG` bundle file(s);
+- `AVI` file(s).
 
 Both these kind of sources are produced from emulators such as [MAME](https://www.mamedev.org/). If you are using MAME you need to run it from the console with `-mngwrite` or `-aviwrite` [command line options](https://docs.mamedev.org/commandline/commandline-all.html). If you're going to use the second format take into account that AVI files recorded from MAME are pretty uncompressed: this means that it will consume an huge amount of disk space (usually 1Gb for 1 minute of recording).
 
@@ -62,6 +62,11 @@ Besides which emulator you will use and which format you'll be going to use for 
 ### Build
 
 Just download/clone the project with [github](https://github.com/) and then open it in [Microsoft Visual Studio](https://visualstudio.microsoft.com/).
+
+### MNG File handling
+
+I'm using the SprinterMNG library from Sprinter Publishing to handle `.mng` pictures bundles.
+SprinterMNG Copyright © Sprinter Publishing 2009.
 
 ### References
 
