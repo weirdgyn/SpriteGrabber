@@ -102,14 +102,12 @@ namespace SpriteGrabber
             if (String.IsNullOrWhiteSpace(txtSpriteBaseName.Text))
             {
                 MessageBox.Show("You must select a sprite basename");
-
                 return;
             }
 
             if (fbdFolder.ShowDialog() != DialogResult.OK)
             {
                 mainForm.AddMessage("User aborted");
-
                 return;
             }
 
