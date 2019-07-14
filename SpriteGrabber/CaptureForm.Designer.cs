@@ -34,7 +34,7 @@
             this.txtSpriteFile = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCollect = new System.Windows.Forms.Button();
-            this.btnDiscard = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.lblOffset = new System.Windows.Forms.Label();
             this.nudOffsetY = new System.Windows.Forms.NumericUpDown();
             this.nudOffsetX = new System.Windows.Forms.NumericUpDown();
@@ -109,25 +109,25 @@
             // 
             this.btnCollect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCollect.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnCollect.Location = new System.Drawing.Point(134, 428);
+            this.btnCollect.Location = new System.Drawing.Point(193, 367);
             this.btnCollect.Name = "btnCollect";
-            this.btnCollect.Size = new System.Drawing.Size(75, 23);
+            this.btnCollect.Size = new System.Drawing.Size(60, 23);
             this.btnCollect.TabIndex = 4;
             this.btnCollect.Text = "Collect";
             this.btnCollect.UseVisualStyleBackColor = true;
             this.btnCollect.Click += new System.EventHandler(this.btnCollect_Click);
             // 
-            // btnDiscard
+            // btnClose
             // 
-            this.btnDiscard.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDiscard.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnDiscard.Location = new System.Drawing.Point(215, 428);
-            this.btnDiscard.Name = "btnDiscard";
-            this.btnDiscard.Size = new System.Drawing.Size(75, 23);
-            this.btnDiscard.TabIndex = 5;
-            this.btnDiscard.Text = "Discard";
-            this.btnDiscard.UseVisualStyleBackColor = true;
-            this.btnDiscard.Click += new System.EventHandler(this.btnDiscard_Click);
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnClose.Location = new System.Drawing.Point(175, 428);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.TabIndex = 5;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // lblOffset
             // 
@@ -238,7 +238,7 @@
             this.AcceptButton = this.btnCollect;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnDiscard;
+            this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(425, 476);
             this.Controls.Add(this.ssStatus);
             this.Controls.Add(this.txtSpriteSize);
@@ -247,7 +247,7 @@
             this.Controls.Add(this.lblOffset);
             this.Controls.Add(this.nudOffsetY);
             this.Controls.Add(this.nudOffsetX);
-            this.Controls.Add(this.btnDiscard);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnCollect);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtSpriteFile);
@@ -276,7 +276,7 @@
         private System.Windows.Forms.TextBox txtSpriteFile;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCollect;
-        private System.Windows.Forms.Button btnDiscard;
+        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label lblOffset;
         private System.Windows.Forms.NumericUpDown nudOffsetY;
         private System.Windows.Forms.NumericUpDown nudOffsetX;

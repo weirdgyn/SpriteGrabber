@@ -165,27 +165,6 @@ namespace SpriteGrabber
             endPoint.Y = y1;
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            if (sfdDialog.ShowDialog() != DialogResult.OK)
-                return;
-
-            try
-            {
-                Bitmap bmp = getSprite();
-
-                bmp.Save(sfdDialog.FileName, System.Drawing.Imaging.ImageFormat.Png);
-
-                txtSpriteFile.Text = sfdDialog.FileName;
-
-                mainForm.AddMessage("Saving sprite to: " + sfdDialog.FileName);
-            }
-            catch (Exception ex)
-            {
-                mainForm.AddMessage("Exception:" + ex.Message);
-            }
-        }
-
         private void pbDifferenceImage_MouseDown(object sender, MouseEventArgs e)
         {
             drawingState = DrawingState.Setting;
@@ -211,7 +190,24 @@ namespace SpriteGrabber
                 return;
 
             drawingState = DrawingState.Set;
-            endPoint = e.Location;
+
+            Point location = new Point();
+
+            if (e.Location.X > 0 && e.Location.X < pbCaptureImage.Width)
+                location.X = e.Location.X;
+            else if (e.Location.X < 0)
+                location.X = 0;
+            else if (e.Location.X > pbCaptureImage.Width)
+                location.X = pbCaptureImage.Width-1;
+
+            if (e.Location.Y > 0 && e.Location.Y < pbCaptureImage.Height)
+                location.Y = e.Location.Y;
+            else if (e.Location.Y < 0)
+                location.Y = 0;
+            else if (e.Location.Y > pbCaptureImage.Height)
+                location.Y = pbCaptureImage.Height - 1;
+
+            endPoint = location;
 
             Optimize();
 
@@ -268,9 +264,30 @@ namespace SpriteGrabber
             mainForm.storeSprite(bitmap);
         }
 
-        private void btnDiscard_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (sfdDialog.ShowDialog() != DialogResult.OK)
+                return;
+
+            try
+            {
+                Bitmap bmp = getSprite();
+
+                bmp.Save(sfdDialog.FileName, System.Drawing.Imaging.ImageFormat.Png);
+
+                txtSpriteFile.Text = sfdDialog.FileName;
+
+                mainForm.AddMessage("Saving sprite to: " + sfdDialog.FileName);
+            }
+            catch (Exception ex)
+            {
+                mainForm.AddMessage("Exception:" + ex.Message);
+            }
         }
     }
 }
