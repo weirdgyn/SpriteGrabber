@@ -28,34 +28,34 @@ Once launched the application shows the main form where you can recognize four m
 - _Frame_ picturebox (x2);
 - _Messages_ listview.
 
-Below the two frame picturebox there are a number of widgets (buttons, textboxes, up-down controls) to adjust, report and run the workflow actions.
+Sited below the two frames picturebox there are a number of widgets (buttons, textboxes, up-down controls) to adjust, report and run the workflow actions.
 
-The _Frame bundles_ texbox simply report the filename of the last selected graphic source. To select a graphic source you need to push onto the button on the right of the textbox and select a suitable file into your archives. Once the file has been selected the application try to investigate the file collecting the total frames number and then try to load the first two frames and place them in _Frames_ pictureboxes.
+The _Frame bundles_ texbox simply report the filename of the last selected graphic source. To select a graphic source you need to push onto the button on the right of the textbox and select a suitable file from your archives. Once the file has been selected the application will investigate the file collecting the total frames number and then try to load the first two frames to place them in _Frames_ pictureboxes.
 
-The _frame_ picturebox is used to depict the frame selected by the user acting on up-down controls placed under the picturebox itself.
+Each _frame_ picturebox is used to depict the frame selected by the user acting on up-down controls placed under the picturebox itself.
 The button placed between the two up-down control is used to exchange the frames into the pictureboxes (and frames indexes accordingly).
-Those frames are used by the application to extract the sprite, you should try to select two frames with the most _common_ background and the sprite meant to be collected in two different and not overlapping positions.
+Those frames are used by the application to _summon_ the sprite, you should try to select two frames with the most _common_ background and the sprite meant to be collected in two different and not overlapping positions.
 
-_Messages_ listview is a simple log of actions and results/errors occurred during the application run. The list itself can be cleared / saved acting on its own context menu.
+_Messages_ listview is a simple log of actions and results/errors occurred during the application run. The list itself can be cleared / saved acting on the listview context menu.
 
 _Frames_ textbox (placed on the left below the picturebox) reports the total number of frames available in the graphic source.
 
 _BG Color_ textbox (placed on the right below the picturebox) reports the currently selected background color. Background color is gathered automatically by the application when one of the frames change nevertheless the user can change the background color just by clicking onto the desired color on depicted frames. Please note that selecting the background color it's not mandatory but it will optimize the grabbing extraction process.
 
-_Capture_ button is the trigger of the main function of the application. Pushing onto this button will open a new window where selected frames are compared to check for differences. The result of comparation is shown in the picturebox placed in center of the window, this can be assumed as the source of the sprite. Between two frames of a same time sequence the common portion (the part that's NOT changing) is _probably_ the background and thus can be removed. The remaining elements are either sprites or portion of background changing between frames (portions of background hidden by the sprite itself, portion of background sliding in or out of the scene due to scrolling etc). Some portions of such remainder can be removed adjusting _Offset_ up-down controls placed under the frame picturebox (please note that both offsets value can be either positive or negative).
+_Capture_ button is the trigger of the main function of the application. Pushing this button will open a new window where selected frames are compared to check for differences (to be precise the left one is compared against the right one). The result of comparision is shown in the picturebox placed in center of the window, this can be assumed as the source of the sprite. Between two frames of a same time sequence the common portion (the part that's NOT changing) is _probably_ the background and thus can be removed. The remaining elements are either sprites or portion of background changing between frames (portions of background hidden by the sprite itself, portion of background sliding in or out of the scene due to scrolling etc). Some portions of such remainder can be removed adjusting _Offset_ up-down controls placed under the frame picturebox (please note that both offsets value can be either positive or negative).
 If you have initially selected two _good_ frames and applied the correct offset the sprite is hopefully clear and isolated. Now you can _select_ it by mouse (just click and drag the cursor until the yellow rectangle include the sprite) you don't need to be extremely precise in this selection since an optimization algorithm is run just after you release the mouse button and the smallest rectangle including the sprite will be drawn for you. Once the sprite has been selected you have three choices:
 
 1. trash everything clicking on _Close_ button;
 2. store your sprite for later use clicking on _Collect_;
 3. immediately save the selected sprite  with _Save_ button.
 
-If you press _Save_ you're asked for a location where to save the sprite file (please note that it will be saved as a PNG image to preserve the transparent background) but it won't store it into yout sprite collection, after saving the window will close. _Collect_ will store the selected sprite in your global collection (but it won't save it anywere) the window will NOT close allowing you to hunt for another sprite. _Close_ will obviously close the window without saving or storing the selected sprite (if any). 
+If you press _Save_ you're asked for a location where to save the sprite file (please note that it will be saved as a PNG image to preserve the transparent background) but it won't store this into yout sprite collection, after saving the window will close. _Collect_ will store the selected sprite in your global collection (but it won't save it anywere) the window will NOT close allowing you to hunt for another sprite. _Close_ will obviously close the window without saving or storing the selected sprite (if any). 
 
 Once back on the main window you'll probably want to repeat the process (with different frames) to collect more and more sprites.
 
 The amount of sprites collected on your hunting/grabbing session is reported on the right of the _Sprites_ button.
 
-After you repeated the process of grabbing some times you can look at the sprites collection by clicking the button _Sprites_. There (on the new window) you'll find sprites depicted by their miniatures enlisted on the right. Clicking on a sprite will display it in all it's glory on the left panel. If you wish to investigate details you can zoom in by using the zoom-bar on the right of the window.
+After you repeated the process of grabbing some times you can look at the sprites collection by clicking the button _Sprites_. There (on the new window) you'll find sprites depicted by their miniatures enlisted on the left. Clicking on a sprite will display it in all it's glory on the right panel. If you wish to investigate details you can zoom in by using the zoom-bar on the right of the panel istelf.
 Once you're satisfied of the sprite collection you can click on _Save_ button and select the folder where the sprite collection will be saved (as a bundle of PNG images).
 
 ### Guidelines to properly collect game frames
@@ -74,7 +74,11 @@ Just download/clone the project with [github](https://github.com/) and then open
 ### MNG File handling
 
 I'm using the SprinterMNG library from Sprinter Publishing to handle `.mng` pictures bundles.
+
+### Copyright notices
+
 SprinterMNG Copyright © Sprinter Publishing 2009.
+MAME Copyright (C) 1997-2019  MAMEDev and contributors.
 
 ### TODO
 
