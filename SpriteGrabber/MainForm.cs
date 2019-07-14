@@ -30,6 +30,20 @@ namespace SpriteGrabber
             AddMessage("Sprite stored");
         }
 
+        public void clearSprites()
+        {
+            lstSprites.Clear();
+            txtSprites.Text = "";
+            AddMessage("Sprite collection cleared");
+        }
+
+        public void discardSprite(int index)
+        {
+            lstSprites.RemoveAt(index);
+            txtSprites.Text = lstSprites.Count.ToString();
+            AddMessage("Sprite removed");
+        }
+
         private void loadMNG()
         {
             MNG mng = new MNG();
@@ -298,6 +312,9 @@ namespace SpriteGrabber
 
         private void btnSprites_Click(object sender, EventArgs e)
         {
+            if (lstSprites == null || lstSprites.Count == 0)
+                return;
+
             SpritesForm spritesForm = new SpritesForm(this,lstSprites);
             spritesForm.Show();
         }

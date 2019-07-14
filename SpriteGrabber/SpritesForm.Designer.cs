@@ -38,8 +38,13 @@
             this.fbdFolder = new System.Windows.Forms.FolderBrowserDialog();
             this.txtSpriteBaseName = new System.Windows.Forms.TextBox();
             this.lblSpriteBaseName = new System.Windows.Forms.Label();
+            this.cmsSprites = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.miClear = new System.Windows.Forms.ToolStripMenuItem();
+            this.miDelete = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.pbSprite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbZoom)).BeginInit();
+            this.cmsSprites.SuspendLayout();
             this.SuspendLayout();
             // 
             // ilSprites
@@ -52,6 +57,7 @@
             // 
             this.lvSprites.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.lvSprites.ContextMenuStrip = this.cmsSprites;
             this.lvSprites.LargeImageList = this.ilSprites;
             this.lvSprites.Location = new System.Drawing.Point(12, 12);
             this.lvSprites.Name = "lvSprites";
@@ -127,6 +133,35 @@
             this.lblSpriteBaseName.TabIndex = 6;
             this.lblSpriteBaseName.Text = "Sprite base name";
             // 
+            // cmsSprites
+            // 
+            this.cmsSprites.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.miClear,
+            this.toolStripSeparator1,
+            this.miDelete});
+            this.cmsSprites.Name = "cmsSprites";
+            this.cmsSprites.Size = new System.Drawing.Size(181, 76);
+            this.cmsSprites.Opening += new System.ComponentModel.CancelEventHandler(this.cmsSprites_Opening);
+            // 
+            // miClear
+            // 
+            this.miClear.Name = "miClear";
+            this.miClear.Size = new System.Drawing.Size(180, 22);
+            this.miClear.Text = "Clear";
+            this.miClear.Click += new System.EventHandler(this.miClear_Click);
+            // 
+            // miDelete
+            // 
+            this.miDelete.Name = "miDelete";
+            this.miDelete.Size = new System.Drawing.Size(180, 22);
+            this.miDelete.Text = "Delete";
+            this.miDelete.Click += new System.EventHandler(this.miDelete_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            // 
             // SpritesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -144,6 +179,7 @@
             this.Text = "Sprites";
             ((System.ComponentModel.ISupportInitialize)(this.pbSprite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbZoom)).EndInit();
+            this.cmsSprites.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -160,5 +196,9 @@
         private System.Windows.Forms.FolderBrowserDialog fbdFolder;
         private System.Windows.Forms.TextBox txtSpriteBaseName;
         private System.Windows.Forms.Label lblSpriteBaseName;
+        private System.Windows.Forms.ContextMenuStrip cmsSprites;
+        private System.Windows.Forms.ToolStripMenuItem miClear;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem miDelete;
     }
 }

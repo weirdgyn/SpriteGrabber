@@ -26,7 +26,7 @@ namespace SpriteGrabber
 
             foreach (Bitmap sprite in sprites)
             {
-                String key = String.Format("Sprite{0}",index);
+                String key = index.ToString();
 
                 ilSprites.Images.Add(key, equalizeSprite(sprite, rectangle));
 
@@ -99,6 +99,13 @@ namespace SpriteGrabber
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrWhiteSpace(txtSpriteBaseName.Text))
+            {
+                MessageBox.Show("You must select a sprite basename");
+
+                return;
+            }
+
             if (fbdFolder.ShowDialog() != DialogResult.OK)
             {
                 mainForm.AddMessage("User aborted");
@@ -106,33 +113,84 @@ namespace SpriteGrabber
                 return;
             }
 
-            if (String.IsNullOrWhiteSpace(txtSpriteBaseName.Text))
-            {
-                MessageBox.Show(this, "You must select a sprite basename");
-
-                return;
-            }
-
             int index = 0;
 
-            foreach (Image image in ilSprites.Images)
+            mainForm.AddMessage("Saving sprites in: " + fbdFolder.SelectedPath);
+
+            if (lvSprites.SelectedItems.Count == 0)
             {
-                String filename = System.IO.Path.Combine(fbdFolder.SelectedPath, String.Format("{0}{1}.png", txtSpriteBaseName.Text, index));
-
-                index++;
-
-                try
+                foreach (Image image in ilSprites.Images)
                 {
-                    image.Save(filename, System.Drawing.Imaging.ImageFormat.Png);
-                    mainForm.AddMessage("Saving sprites in " + fbdFolder.SelectedPath);
+                    String filename = System.IO.Path.Combine(fbdFolder.SelectedPath, String.Format("{0}{1}.png", txtSpriteBaseName.Text, index));
+
+                    index++;
+
+                    try
+                    {
+                        image.Save(filename, System.Drawing.Imaging.ImageFormat.Png);
+                    }
+                    catch (Exception ex)
+                    {
+                        mainForm.AddMessage("Exception: " + ex.Message);
+                    }
                 }
-                catch (Exception ex)
+            }
+            else
+            {
+                foreach (ListViewItem item in lvSprites.SelectedItems)
                 {
-                    mainForm.AddMessage("Exception: " + ex.Message);
+                    String filename = System.IO.Path.Combine(fbdFolder.SelectedPath, String.Format("{0}{1}.png", txtSpriteBaseName.Text, index));
+
+                    index++;
+
+                    try
+                    {
+                        Image image = ilSprites.Images[item.ImageKey];
+
+                        if (image != null)
+                            image.Save(filename, System.Drawing.Imaging.ImageFormat.Png);
+                    }
+                    catch (Exception ex)
+                    {
+                        mainForm.AddMessage("Exception: " + ex.Message);
+
+                    }
                 }
             }
 
             mainForm.AddMessage(index.ToString() + " sprite saved");
+        }
+
+        private void miClear_Click(object sender, EventArgs e)
+        {
+            ilSprites.Images.Clear();
+            lvSprites.Items.Clear();
+            mainForm.clearSprites();
+        }
+
+        private void miDelete_Click(object sender, EventArgs e)
+        {
+            ListViewItem item = lvSprites.SelectedItems[0];
+
+            if (item == null)
+                return;
+
+            pbSprite.Image = null;
+
+            int index;
+
+            if (int.TryParse(item.ImageKey, out index))
+            {
+                ilSprites.Images.RemoveByKey(item.ImageKey);
+                lvSprites.Items.RemoveByKey(item.ImageKey);
+                mainForm.discardSprite(index);
+            }
+        }
+
+        private void cmsSprites_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            miDelete.Enabled = (lvSprites.SelectedItems.Count != 0);
+            miClear.Enabled = (lvSprites.Items.Count != 0);
         }
     }
 }
