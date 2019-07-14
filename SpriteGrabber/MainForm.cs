@@ -26,6 +26,8 @@ namespace SpriteGrabber
         public void storeSprite(Bitmap sprite)
         {
             lstSprites.Add(sprite);
+            txtSprites.Text = lstSprites.Count.ToString();
+            AddMessage("Sprite stored");
         }
 
         private void LoadMNG()

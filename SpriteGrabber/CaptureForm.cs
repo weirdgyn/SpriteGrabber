@@ -34,20 +34,22 @@ namespace SpriteGrabber
             InitializeComponent();
         }
 
-        public CaptureForm(MainForm parent, Image image1, Image image2, Color bgColor) : this()
+        public CaptureForm(MainForm parent, Image image1, Image image2, Color backgroundColor) : this()
         {
             mainForm = parent;
 
             bmp1 = new Bitmap(image1);
             bmp2 = new Bitmap(image2);
 
-            backgroundColor = bgColor;
+            this.backgroundColor = backgroundColor;
 
-            pbCaptureImage.Image = getDifferenceBmp(bmp1, bmp2, 0, 0, bgColor);
+            pbCaptureImage.Image = getDifferenceBmp();
         }
 
-        private Bitmap getDifferenceBmp(Bitmap bmp1, Bitmap bmp2, int offsetX, int offsetY, Color bgColor)
+        private Bitmap getDifferenceBmp()
         {
+            int offsetX = (int)nudOffsetX.Value;
+            int offsetY = (int)nudOffsetY.Value;
             Bitmap bmp = new Bitmap(bmp1.Width, bmp1.Height);
 
             for (int x = 0; x < bmp1.Width; x++)
@@ -66,7 +68,7 @@ namespace SpriteGrabber
 
                     if (color1 != color2)
                     {
-                        if (color1 == bgColor)
+                        if (color1 == backgroundColor)
                             bmp.SetPixel(x, y, Color.Transparent);
                         else
                         {
@@ -237,12 +239,12 @@ namespace SpriteGrabber
 
         private void nudOffsetX_ValueChanged(object sender, EventArgs e)
         {
-            pbCaptureImage.Image = getDifferenceBmp(bmp1, bmp2, (int)nudOffsetX.Value, (int)nudOffsetY.Value, backgroundColor);
+            pbCaptureImage.Image = getDifferenceBmp();
         }
 
         private void nudOffsetY_ValueChanged(object sender, EventArgs e)
         {
-            pbCaptureImage.Image = getDifferenceBmp(bmp1, bmp2, (int)nudOffsetX.Value, (int)nudOffsetY.Value, backgroundColor);
+            pbCaptureImage.Image = getDifferenceBmp();
         }
 
         private void CompareForm_Load(object sender, EventArgs e)
@@ -253,18 +255,17 @@ namespace SpriteGrabber
         private void cbPreferredColor_SelectedValueChanged(object sender, EventArgs e)
         {
             preferredColor = (PreferredColor)Enum.Parse(typeof(PreferredColor), cbPreferredColor.Text);
-            pbCaptureImage.Image = getDifferenceBmp(bmp1, bmp2, (int)nudOffsetX.Value, (int)nudOffsetY.Value, backgroundColor);
+            pbCaptureImage.Image = getDifferenceBmp();
         }
 
         private void btnCollect_Click(object sender, EventArgs e)
         {
             Bitmap bitmap = getSprite();
 
+            if (bitmap == null)
+                return;
+
             mainForm.storeSprite(bitmap);
-
-            mainForm.AddMessage("Sprite stored");
-
-            Close();
         }
 
         private void btnDiscard_Click(object sender, EventArgs e)

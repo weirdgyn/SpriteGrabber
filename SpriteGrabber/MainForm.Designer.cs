@@ -55,6 +55,7 @@
             this.btnExchangeFrames = new System.Windows.Forms.Button();
             this.btnSprites = new System.Windows.Forms.Button();
             this.tmrSplash = new System.Windows.Forms.Timer(this.components);
+            this.txtSprites = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbFrame1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFrame2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudFrame1)).BeginInit();
@@ -291,7 +292,7 @@
             // 
             this.btnSprites.Location = new System.Drawing.Point(718, 363);
             this.btnSprites.Name = "btnSprites";
-            this.btnSprites.Size = new System.Drawing.Size(98, 23);
+            this.btnSprites.Size = new System.Drawing.Size(69, 23);
             this.btnSprites.TabIndex = 23;
             this.btnSprites.Text = "Sprites";
             this.btnSprites.UseVisualStyleBackColor = true;
@@ -303,11 +304,20 @@
             this.tmrSplash.Interval = 2000;
             this.tmrSplash.Tick += new System.EventHandler(this.tmrSplash_Tick);
             // 
+            // txtSprites
+            // 
+            this.txtSprites.Location = new System.Drawing.Point(792, 365);
+            this.txtSprites.Name = "txtSprites";
+            this.txtSprites.ReadOnly = true;
+            this.txtSprites.Size = new System.Drawing.Size(24, 20);
+            this.txtSprites.TabIndex = 24;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(829, 541);
+            this.Controls.Add(this.txtSprites);
             this.Controls.Add(this.btnSprites);
             this.Controls.Add(this.btnExchangeFrames);
             this.Controls.Add(this.lblMaxFrames);
@@ -368,6 +378,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem miClear;
         private System.Windows.Forms.Timer tmrSplash;
+        private System.Windows.Forms.TextBox txtSprites;
     }
 }
 
