@@ -13,6 +13,10 @@ This application is a tool meant to give some relief to those fouls that boldly 
 
 __Please NOTE that this application is still a work in progress and it's long to be complete.__
 
+### Side note
+
+There are other utility like this one (probably better ones) [MAME](https://www.mamedev.org/) itself has a special feature that allows to dump game pallette (usually bound to [F4](https://strategywiki.org/wiki/MAME/Special_Keys#F4) key).
+
 ### Usage
 
 Before your first run please read the following recommendations:
