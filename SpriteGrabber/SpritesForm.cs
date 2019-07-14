@@ -170,20 +170,18 @@ namespace SpriteGrabber
 
         private void miDelete_Click(object sender, EventArgs e)
         {
-            ListViewItem item = lvSprites.SelectedItems[0];
-
-            if (item == null)
-                return;
-
             pbSprite.Image = null;
 
-            int index;
-
-            if (int.TryParse(item.ImageKey, out index))
+            foreach (ListViewItem item in lvSprites.SelectedItems)
             {
-                ilSprites.Images.RemoveByKey(item.ImageKey);
-                lvSprites.Items.RemoveByKey(item.ImageKey);
-                mainForm.discardSprite(index);
+                int index;
+
+                if (int.TryParse(item.ImageKey, out index))
+                {
+                    ilSprites.Images.RemoveByKey(item.ImageKey);
+                    lvSprites.Items.RemoveByKey(item.ImageKey);
+                    mainForm.discardSprite(index);
+                }
             }
         }
 
