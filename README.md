@@ -77,11 +77,11 @@ I'm using the SprinterMNG library from Sprinter Publishing to handle `.mng` pict
 
 ### Copyright notices
 
+Visual Studio (C) 2017 Microsoft Corporation.
+
 SprinterMNG Copyright © Sprinter Publishing 2009.
 
 MAME Copyright (C) 1997-2019  MAMEDev and contributors.
-
-Visual Studio (C) 2017 Microsoft Corporation.
 
 ### TODO
 
