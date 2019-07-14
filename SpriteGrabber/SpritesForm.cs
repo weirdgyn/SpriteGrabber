@@ -163,9 +163,9 @@ namespace SpriteGrabber
 
         private void miClear_Click(object sender, EventArgs e)
         {
+            mainForm.clearSprites();
             ilSprites.Images.Clear();
             lvSprites.Items.Clear();
-            mainForm.clearSprites();
         }
 
         private void miDelete_Click(object sender, EventArgs e)
@@ -178,9 +178,9 @@ namespace SpriteGrabber
 
                 if (int.TryParse(item.ImageKey, out index))
                 {
-                    ilSprites.Images.RemoveByKey(item.ImageKey);
-                    lvSprites.Items.RemoveByKey(item.ImageKey);
                     mainForm.discardSprite(index);
+                    ilSprites.Images.RemoveByKey(item.ImageKey);
+                    lvSprites.Items.Remove(item);
                 }
             }
         }
