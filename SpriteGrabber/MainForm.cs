@@ -34,6 +34,7 @@ namespace SpriteGrabber
         {
             lstSprites.Clear();
             txtSprites.Text = "";
+
             AddMessage("Sprite collection cleared");
         }
 

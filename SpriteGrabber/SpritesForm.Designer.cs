@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.ilSprites = new System.Windows.Forms.ImageList(this.components);
             this.lvSprites = new System.Windows.Forms.ListView();
+            this.cmsSprites = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.miClear = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.miDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.pbSprite = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
@@ -38,13 +42,10 @@
             this.fbdFolder = new System.Windows.Forms.FolderBrowserDialog();
             this.txtSpriteBaseName = new System.Windows.Forms.TextBox();
             this.lblSpriteBaseName = new System.Windows.Forms.Label();
-            this.cmsSprites = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.miClear = new System.Windows.Forms.ToolStripMenuItem();
-            this.miDelete = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.txtZoom = new System.Windows.Forms.TextBox();
+            this.cmsSprites.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSprite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbZoom)).BeginInit();
-            this.cmsSprites.SuspendLayout();
             this.SuspendLayout();
             // 
             // ilSprites
@@ -65,6 +66,35 @@
             this.lvSprites.TabIndex = 0;
             this.lvSprites.UseCompatibleStateImageBehavior = false;
             this.lvSprites.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lvSprites_ItemSelectionChanged);
+            // 
+            // cmsSprites
+            // 
+            this.cmsSprites.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.miClear,
+            this.toolStripSeparator1,
+            this.miDelete});
+            this.cmsSprites.Name = "cmsSprites";
+            this.cmsSprites.Size = new System.Drawing.Size(108, 54);
+            this.cmsSprites.Opening += new System.ComponentModel.CancelEventHandler(this.cmsSprites_Opening);
+            // 
+            // miClear
+            // 
+            this.miClear.Name = "miClear";
+            this.miClear.Size = new System.Drawing.Size(107, 22);
+            this.miClear.Text = "Clear";
+            this.miClear.Click += new System.EventHandler(this.miClear_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(104, 6);
+            // 
+            // miDelete
+            // 
+            this.miDelete.Name = "miDelete";
+            this.miDelete.Size = new System.Drawing.Size(107, 22);
+            this.miDelete.Text = "Delete";
+            this.miDelete.Click += new System.EventHandler(this.miDelete_Click);
             // 
             // pbSprite
             // 
@@ -102,11 +132,11 @@
             // 
             this.tbZoom.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbZoom.Location = new System.Drawing.Point(771, 12);
+            this.tbZoom.Location = new System.Drawing.Point(771, 38);
             this.tbZoom.Minimum = 1;
             this.tbZoom.Name = "tbZoom";
             this.tbZoom.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.tbZoom.Size = new System.Drawing.Size(45, 425);
+            this.tbZoom.Size = new System.Drawing.Size(45, 399);
             this.tbZoom.TabIndex = 4;
             this.tbZoom.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
             this.tbZoom.Value = 1;
@@ -133,40 +163,20 @@
             this.lblSpriteBaseName.TabIndex = 6;
             this.lblSpriteBaseName.Text = "Sprite base name";
             // 
-            // cmsSprites
+            // txtZoom
             // 
-            this.cmsSprites.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.miClear,
-            this.toolStripSeparator1,
-            this.miDelete});
-            this.cmsSprites.Name = "cmsSprites";
-            this.cmsSprites.Size = new System.Drawing.Size(181, 76);
-            this.cmsSprites.Opening += new System.ComponentModel.CancelEventHandler(this.cmsSprites_Opening);
-            // 
-            // miClear
-            // 
-            this.miClear.Name = "miClear";
-            this.miClear.Size = new System.Drawing.Size(180, 22);
-            this.miClear.Text = "Clear";
-            this.miClear.Click += new System.EventHandler(this.miClear_Click);
-            // 
-            // miDelete
-            // 
-            this.miDelete.Name = "miDelete";
-            this.miDelete.Size = new System.Drawing.Size(180, 22);
-            this.miDelete.Text = "Delete";
-            this.miDelete.Click += new System.EventHandler(this.miDelete_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.txtZoom.Location = new System.Drawing.Point(771, 12);
+            this.txtZoom.Name = "txtZoom";
+            this.txtZoom.ReadOnly = true;
+            this.txtZoom.Size = new System.Drawing.Size(45, 20);
+            this.txtZoom.TabIndex = 7;
             // 
             // SpritesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(828, 475);
+            this.Controls.Add(this.txtZoom);
             this.Controls.Add(this.lblSpriteBaseName);
             this.Controls.Add(this.txtSpriteBaseName);
             this.Controls.Add(this.tbZoom);
@@ -177,9 +187,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "SpritesForm";
             this.Text = "Sprites";
+            this.cmsSprites.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbSprite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbZoom)).EndInit();
-            this.cmsSprites.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,5 +210,6 @@
         private System.Windows.Forms.ToolStripMenuItem miClear;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem miDelete;
+        private System.Windows.Forms.TextBox txtZoom;
     }
 }

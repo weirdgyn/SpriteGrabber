@@ -89,6 +89,8 @@ namespace SpriteGrabber
 
             Bitmap bmp = new Bitmap(image, new Size(tbZoom.Value*image.Width, tbZoom.Value*image.Height));
 
+            txtZoom.Text = tbZoom.Value.ToString();
+
             pbSprite.Image = bmp;
         }
 
