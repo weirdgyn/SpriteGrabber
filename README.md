@@ -103,6 +103,7 @@ MAME Copyright (C) 1997-2019  MAMEDev and contributors.
 _MAME:_
 1. https://www.mamedev.org/
 2. https://docs.mamedev.org/commandline/commandline-all.html
+3. https://strategywiki.org/wiki/MAME/Special_Keys#F4
 
 _Microsoft Video Studio:_
 - https://visualstudio.microsoft.com/
