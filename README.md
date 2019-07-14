@@ -56,7 +56,7 @@ Once back on the main window you'll probably want to repeat the process (with di
 The amount of sprites collected on your hunting/grabbing session is reported on the right of the _Sprites_ button.
 
 After you repeated the process of grabbing some times you can look at the sprites collection by clicking the button _Sprites_. There (on the new window) you'll find sprites depicted by their miniatures enlisted on the left. Clicking on a sprite will display it in all it's glory on the right panel. If you wish to investigate details you can zoom in by using the zoom-bar on the right of the panel istelf.
-Once you're satisfied of the sprite collection you can click on _Save_ button and select the folder where the sprite collection will be saved (as a bundle of PNG images).
+Once you're satisfied of the sprite collection you can click on _Save_ button and select the folder where the sprite collection will be saved (as a bundle of PNG images), you can do partial saving by selecting which sprite(s) to save on the left list prior to press _Save_ button. From this window you can also remove sprites from the collection or clear the entire collection by clicking on the appropiate context menu item of the list.
 
 ### Guidelines to properly collect game frames
 
