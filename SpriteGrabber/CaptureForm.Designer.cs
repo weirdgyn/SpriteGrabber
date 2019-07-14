@@ -41,11 +41,15 @@
             this.cbPreferredColor = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtSpriteSize = new System.Windows.Forms.TextBox();
-            this.txtX = new System.Windows.Forms.TextBox();
-            this.txtY = new System.Windows.Forms.TextBox();
+            this.ssStatus = new System.Windows.Forms.StatusStrip();
+            this.lblX = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblXValue = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblY = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblYValue = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pbCaptureImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudOffsetY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudOffsetX)).BeginInit();
+            this.ssStatus.SuspendLayout();
             this.SuspendLayout();
             // 
             // pbCaptureImage
@@ -74,7 +78,7 @@
             // 
             this.lblSprite.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblSprite.AutoSize = true;
-            this.lblSprite.Location = new System.Drawing.Point(14, 348);
+            this.lblSprite.Location = new System.Drawing.Point(12, 348);
             this.lblSprite.Name = "lblSprite";
             this.lblSprite.Size = new System.Drawing.Size(53, 13);
             this.lblSprite.TabIndex = 1;
@@ -84,7 +88,7 @@
             // 
             this.txtSpriteFile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSpriteFile.Location = new System.Drawing.Point(73, 344);
+            this.txtSpriteFile.Location = new System.Drawing.Point(71, 344);
             this.txtSpriteFile.Name = "txtSpriteFile";
             this.txtSpriteFile.ReadOnly = true;
             this.txtSpriteFile.Size = new System.Drawing.Size(279, 20);
@@ -93,7 +97,7 @@
             // btnSave
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.Location = new System.Drawing.Point(358, 343);
+            this.btnSave.Location = new System.Drawing.Point(356, 343);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(56, 23);
             this.btnSave.TabIndex = 3;
@@ -105,7 +109,7 @@
             // 
             this.btnCollect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCollect.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnCollect.Location = new System.Drawing.Point(134, 404);
+            this.btnCollect.Location = new System.Drawing.Point(134, 428);
             this.btnCollect.Name = "btnCollect";
             this.btnCollect.Size = new System.Drawing.Size(75, 23);
             this.btnCollect.TabIndex = 4;
@@ -117,7 +121,7 @@
             // 
             this.btnDiscard.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDiscard.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnDiscard.Location = new System.Drawing.Point(215, 404);
+            this.btnDiscard.Location = new System.Drawing.Point(215, 428);
             this.btnDiscard.Name = "btnDiscard";
             this.btnDiscard.Size = new System.Drawing.Size(75, 23);
             this.btnDiscard.TabIndex = 5;
@@ -127,8 +131,9 @@
             // 
             // lblOffset
             // 
+            this.lblOffset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblOffset.AutoSize = true;
-            this.lblOffset.Location = new System.Drawing.Point(15, 322);
+            this.lblOffset.Location = new System.Drawing.Point(12, 322);
             this.lblOffset.Name = "lblOffset";
             this.lblOffset.Size = new System.Drawing.Size(38, 13);
             this.lblOffset.TabIndex = 18;
@@ -136,7 +141,8 @@
             // 
             // nudOffsetY
             // 
-            this.nudOffsetY.Location = new System.Drawing.Point(195, 318);
+            this.nudOffsetY.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudOffsetY.Location = new System.Drawing.Point(193, 318);
             this.nudOffsetY.Minimum = new decimal(new int[] {
             100,
             0,
@@ -149,7 +155,8 @@
             // 
             // nudOffsetX
             // 
-            this.nudOffsetX.Location = new System.Drawing.Point(73, 318);
+            this.nudOffsetX.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.nudOffsetX.Location = new System.Drawing.Point(71, 318);
             this.nudOffsetX.Minimum = new decimal(new int[] {
             100,
             0,
@@ -162,6 +169,7 @@
             // 
             // cbPreferredColor
             // 
+            this.cbPreferredColor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cbPreferredColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPreferredColor.FormattingEnabled = true;
             this.cbPreferredColor.Location = new System.Drawing.Point(317, 317);
@@ -172,8 +180,9 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 372);
+            this.label1.Location = new System.Drawing.Point(12, 372);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 20;
@@ -181,27 +190,48 @@
             // 
             // txtSpriteSize
             // 
-            this.txtSpriteSize.Location = new System.Drawing.Point(73, 369);
+            this.txtSpriteSize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtSpriteSize.Location = new System.Drawing.Point(71, 369);
             this.txtSpriteSize.Name = "txtSpriteSize";
             this.txtSpriteSize.ReadOnly = true;
             this.txtSpriteSize.Size = new System.Drawing.Size(116, 20);
             this.txtSpriteSize.TabIndex = 21;
             // 
-            // txtX
+            // ssStatus
             // 
-            this.txtX.Location = new System.Drawing.Point(332, 282);
-            this.txtX.Name = "txtX";
-            this.txtX.ReadOnly = true;
-            this.txtX.Size = new System.Drawing.Size(32, 20);
-            this.txtX.TabIndex = 23;
+            this.ssStatus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblX,
+            this.lblXValue,
+            this.lblY,
+            this.lblYValue});
+            this.ssStatus.Location = new System.Drawing.Point(0, 454);
+            this.ssStatus.Name = "ssStatus";
+            this.ssStatus.Size = new System.Drawing.Size(425, 22);
+            this.ssStatus.TabIndex = 25;
             // 
-            // txtY
+            // lblX
             // 
-            this.txtY.Location = new System.Drawing.Point(370, 282);
-            this.txtY.Name = "txtY";
-            this.txtY.ReadOnly = true;
-            this.txtY.Size = new System.Drawing.Size(32, 20);
-            this.txtY.TabIndex = 24;
+            this.lblX.Name = "lblX";
+            this.lblX.Size = new System.Drawing.Size(14, 17);
+            this.lblX.Text = "X";
+            // 
+            // lblXValue
+            // 
+            this.lblXValue.Name = "lblXValue";
+            this.lblXValue.Size = new System.Drawing.Size(17, 17);
+            this.lblXValue.Text = "--";
+            // 
+            // lblY
+            // 
+            this.lblY.Name = "lblY";
+            this.lblY.Size = new System.Drawing.Size(14, 17);
+            this.lblY.Text = "Y";
+            // 
+            // lblYValue
+            // 
+            this.lblYValue.Name = "lblYValue";
+            this.lblYValue.Size = new System.Drawing.Size(17, 17);
+            this.lblYValue.Text = "--";
             // 
             // CaptureForm
             // 
@@ -209,9 +239,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnDiscard;
-            this.ClientSize = new System.Drawing.Size(425, 434);
-            this.Controls.Add(this.txtY);
-            this.Controls.Add(this.txtX);
+            this.ClientSize = new System.Drawing.Size(425, 476);
+            this.Controls.Add(this.ssStatus);
             this.Controls.Add(this.txtSpriteSize);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbPreferredColor);
@@ -232,6 +261,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbCaptureImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudOffsetY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudOffsetX)).EndInit();
+            this.ssStatus.ResumeLayout(false);
+            this.ssStatus.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,7 +283,10 @@
         private System.Windows.Forms.ComboBox cbPreferredColor;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtSpriteSize;
-        private System.Windows.Forms.TextBox txtX;
-        private System.Windows.Forms.TextBox txtY;
+        private System.Windows.Forms.StatusStrip ssStatus;
+        private System.Windows.Forms.ToolStripStatusLabel lblX;
+        private System.Windows.Forms.ToolStripStatusLabel lblXValue;
+        private System.Windows.Forms.ToolStripStatusLabel lblY;
+        private System.Windows.Forms.ToolStripStatusLabel lblYValue;
     }
 }

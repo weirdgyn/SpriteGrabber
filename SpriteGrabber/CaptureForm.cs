@@ -128,97 +128,39 @@ namespace SpriteGrabber
             if (bmp.Width == 0 || bmp.Height == 0)
                 return;
 
-            List<Point> vertices = new List<Point>();
-            bool foundVertice = false;
             Color noColor = Color.FromArgb(0, 0, 0, 0);
 
-            int x, y;
-            int x0 = rectangle.X;
-            int y0 = rectangle.Y;
-            int x1 = rectangle.X+rectangle.Width;
-            int y1 = rectangle.Y+rectangle.Height;
+            int x0 = rectangle.X+rectangle.Width-1;
+            int y0 = rectangle.Y+rectangle.Height-1;
+            int x1 = rectangle.X;
+            int y1 = rectangle.Y;
 
-            for (y = y0; y < y1 && !foundVertice; y++)
-                for (x = x0; x < x1 && !foundVertice; x++)
+            for (int x = rectangle.X; x < rectangle.X + rectangle.Width; x++)
+                for (int y = rectangle.Y; y < rectangle.Y + rectangle.Height; y++)
                 {
                     Color color = bmp.GetPixel(x, y);
 
                     if (color != backgroundColor && color != Color.Transparent && color != noColor)
                     {
-                        vertices.Add(new Point(x, y));
-                        foundVertice = true;
+                        if (x < x0)
+                            x0 = x;
+
+                        if (x > x1)
+                            x1 = x;
+
+                        if (y < y0)
+                            y0 = y;
+
+                        if (y > y1)
+                            y1 = y;
                     }
                 }
 
-            foundVertice = false;
+            startPoint.X = x0;
+            startPoint.Y = y0;
 
-            for (x = x1-1; x >= x0 && !foundVertice; x--)
-                for (y = y0; y < y1 && !foundVertice; y++)
-                {
-                    Color color = bmp.GetPixel(x, y);
-
-                    if (color != backgroundColor && color != Color.Transparent && color != noColor)
-                    {
-                        vertices.Add(new Point(x, y));
-                        foundVertice = true;
-                    }
-                }
-
-            foundVertice = false;
-
-            for (x = x0; x < x1 && !foundVertice; x++)
-                for (y = y1-1; y >= x0 && !foundVertice; y--)
-                {
-                    Color color = bmp.GetPixel(x, y);
-
-                    if (color != backgroundColor && color != Color.Transparent && color != noColor)
-                    {
-                        vertices.Add(new Point(x, y));
-                        foundVertice = true;
-                    }
-                }
-
-            foundVertice = false;
-
-            for (y = y1 - 1; y >= y0 && !foundVertice; y--)
-                for (x = x1 - 1; x >= x0 && !foundVertice; x--)
-                {
-                    Color color = bmp.GetPixel(x, y);
-
-                    if (color != backgroundColor && color != Color.Transparent && color != noColor)
-                    {
-                        vertices.Add(new Point(x, y));
-                        foundVertice = true;
-                    }
-                }
-
-            int maxX = 0, maxY = 0;
-
-            foreach (Point vertice in vertices)
-            {
-                if (vertice.X > maxX)
-                    maxX = vertice.X;
-
-                if (vertice.Y > maxY)
-                    maxY = vertice.Y;
-            }
-
-            int minX = maxX, minY = maxY;
-
-            foreach (Point vertice in vertices)
-            {
-                if (vertice.X < minX)
-                    minX = vertice.X;
-
-                if (vertice.Y < minY)
-                    minY = vertice.Y;
-            }
-
-            startPoint.X = minX;
-            startPoint.Y = minY;
-
-            endPoint.X = maxX;
-            endPoint.Y = maxY;
+            endPoint.X = x1;
+            endPoint.Y = y1;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -251,8 +193,8 @@ namespace SpriteGrabber
 
         private void pbDifferenceImage_MouseMove(object sender, MouseEventArgs e)
         {
-            txtX.Text = e.X.ToString();
-            txtY.Text = e.Y.ToString();
+            lblXValue.Text = e.X.ToString();
+            lblYValue.Text = e.Y.ToString();
 
             if (drawingState != DrawingState.Setting)
                 return;
@@ -290,7 +232,7 @@ namespace SpriteGrabber
 
         private void pbCaptureImage_MouseLeave(object sender, EventArgs e)
         {
-            txtX.Text = txtY.Text = "";
+            lblXValue.Text = lblYValue.Text = "";
         }
 
         private void nudOffsetX_ValueChanged(object sender, EventArgs e)

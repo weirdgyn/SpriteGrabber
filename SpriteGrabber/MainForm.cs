@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace SpriteGrabber
 {
@@ -12,6 +13,7 @@ namespace SpriteGrabber
         Color bgColor;
         List<Bitmap> lstSprites;
         SplashForm splashForm;
+
         public MainForm()
         {
             lstSprites = new List<Bitmap>();
@@ -102,10 +104,12 @@ namespace SpriteGrabber
                 {
                     case ".mng":
                         LoadMNG();
+                        getBGColor();
                         break;
 
                     case ".avi":
                         LoadAVI();
+                        getBGColor();
                         break;
 
                     default:
@@ -129,6 +133,32 @@ namespace SpriteGrabber
             string colorString = "#" + bgColor.R.ToString("X2") + bgColor.G.ToString("X2") + bgColor.B.ToString("X2");
             txtBGColor.Text = colorString;
             AddMessage("Background color selected:" + colorString);
+        }
+
+        private void getBGColor()
+        {
+            if (pbFrame1.Image == null || pbFrame2.Image == null)
+                return;
+
+            Bitmap bmp = new Bitmap(pbFrame1.Image);
+            Dictionary<Color, Int32> frequencies = new Dictionary<Color, Int32>();
+
+            for (int x = 0; x < bmp.Width; x++)
+                for (int y = 0; y < bmp.Height; y++)
+                {
+                    Color color = bmp.GetPixel(x, y);
+
+                    if (!frequencies.ContainsKey(color))
+                        frequencies.Add(color, 0);
+                    else
+                        frequencies[color]++;
+                }
+
+            Int32 hfreq = frequencies.Values.Max();
+
+            bgColor = frequencies.FirstOrDefault(x => x.Value == hfreq).Key;
+            string colorString = "#" + bgColor.R.ToString("X2") + bgColor.G.ToString("X2") + bgColor.B.ToString("X2");
+            txtBGColor.Text = colorString;
         }
 
         public void AddMessage(string message)
@@ -159,6 +189,8 @@ namespace SpriteGrabber
                     {
                         Bitmap bmp = mng.ToBitmap((int)frameCounter.Value);
                         frameBox.Image = bmp;
+                        getBGColor();
+
                         AddMessage("Frame: #" + frameCounter.Value.ToString());
                     }
 
@@ -178,6 +210,8 @@ namespace SpriteGrabber
                         {
                             Bitmap bmp = videoFileReader.ReadVideoFrame((int)frameCounter.Value);
                             frameBox.Image = bmp;
+                            getBGColor();
+
                             AddMessage("Frame: #" + frameCounter.Value.ToString());
                         }
                     }
