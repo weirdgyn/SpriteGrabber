@@ -15,7 +15,7 @@ __Please NOTE that this application is still a work in progress and it's long to
 
 ### Side note
 
-There are other utility like this one (probably better ones) [MAME](https://www.mamedev.org/) itself has a special feature that allows to dump game pallette (usually bound to [F4](https://strategywiki.org/wiki/MAME/Special_Keys#F4) key).
+There are other utilities like this one and probably better ones. [MAME](https://www.mamedev.org/) itself has a special feature that allows to dump game pallette usually bound to [F4](https://strategywiki.org/wiki/MAME/Special_Keys#F4) key.
 
 ### Usage
 
@@ -89,13 +89,15 @@ MAME Copyright (C) 1997-2019  MAMEDev and contributors.
 
 ### TODO
 
-- Drag & drop support;
+- ~~Drag & drop support~~;
+- Handle `.gif` (animated ones) as graphics source format;
 - Handle `.zip` pictures bundle as graphics source format;
-- Equalize sprite format before saving collection;
+- ~~Equalize sprite format before saving collection~~;
 - Better layout;
 - Preview sprite collection animation;
 - Change order in sprites collection;
 - Sprite editor;
+- Create sprite-sheet;
 - More _smartness_ in sprite grabbing procedure.
 
 ### References
