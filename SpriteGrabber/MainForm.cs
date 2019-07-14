@@ -10,7 +10,7 @@ namespace SpriteGrabber
 {
     public partial class MainForm : Form
     {
-        Color bgColor;
+        Color bacgroundColor;
         List<Bitmap> lstSprites;
         SplashForm splashForm;
 
@@ -30,7 +30,7 @@ namespace SpriteGrabber
             AddMessage("Sprite stored");
         }
 
-        private void LoadMNG()
+        private void loadMNG()
         {
             MNG mng = new MNG();
 
@@ -61,7 +61,7 @@ namespace SpriteGrabber
             pbFrame2.Height = bmp2.Height;
         }
 
-        private void LoadAVI()
+        private void loadAVI()
         {
             using (Accord.Video.FFMPEG.VideoFileReader videoFileReader = new VideoFileReader())
             {
@@ -93,7 +93,7 @@ namespace SpriteGrabber
             }
         }
 
-        private void LoadFile()
+        private void loadFile()
         {
             if (!System.IO.File.Exists(txtBundleFile.Text))
                 return;
@@ -105,13 +105,13 @@ namespace SpriteGrabber
                 switch (extension)
                 {
                     case ".mng":
-                        LoadMNG();
-                        getBGColor();
+                        loadMNG();
+                        getBackgroundColor();
                         break;
 
                     case ".avi":
-                        LoadAVI();
-                        getBGColor();
+                        loadAVI();
+                        getBackgroundColor();
                         break;
 
                     default:
@@ -125,19 +125,19 @@ namespace SpriteGrabber
             }
         }
 
-        private void PickColor(PictureBox pictureBox, Point location)
+        private void pickBackgroundColor(PictureBox pictureBox, Point location)
         {
             if (pictureBox.Image == null)
                 return;
 
             Bitmap bmp = new Bitmap(pictureBox.Image);
-            bgColor = bmp.GetPixel(location.X, location.Y);
-            string colorString = "#" + bgColor.R.ToString("X2") + bgColor.G.ToString("X2") + bgColor.B.ToString("X2");
+            bacgroundColor = bmp.GetPixel(location.X, location.Y);
+            string colorString = "#" + bacgroundColor.R.ToString("X2") + bacgroundColor.G.ToString("X2") + bacgroundColor.B.ToString("X2");
             txtBGColor.Text = colorString;
             AddMessage("Background color selected:" + colorString);
         }
 
-        private void getBGColor()
+        private void getBackgroundColor()
         {
             if (pbFrame1.Image == null || pbFrame2.Image == null)
                 return;
@@ -158,8 +158,8 @@ namespace SpriteGrabber
 
             Int32 hfreq = frequencies.Values.Max();
 
-            bgColor = frequencies.FirstOrDefault(x => x.Value == hfreq).Key;
-            string colorString = "#" + bgColor.R.ToString("X2") + bgColor.G.ToString("X2") + bgColor.B.ToString("X2");
+            bacgroundColor = frequencies.FirstOrDefault(x => x.Value == hfreq).Key;
+            string colorString = "#" + bacgroundColor.R.ToString("X2") + bacgroundColor.G.ToString("X2") + bacgroundColor.B.ToString("X2");
             txtBGColor.Text = colorString;
         }
 
@@ -191,7 +191,7 @@ namespace SpriteGrabber
                     {
                         Bitmap bmp = mng.ToBitmap((int)frameCounter.Value);
                         frameBox.Image = bmp;
-                        getBGColor();
+                        getBackgroundColor();
 
                         AddMessage("Frame: #" + frameCounter.Value.ToString());
                     }
@@ -212,7 +212,7 @@ namespace SpriteGrabber
                         {
                             Bitmap bmp = videoFileReader.ReadVideoFrame((int)frameCounter.Value);
                             frameBox.Image = bmp;
-                            getBGColor();
+                            getBackgroundColor();
 
                             AddMessage("Frame: #" + frameCounter.Value.ToString());
                         }
@@ -263,7 +263,7 @@ namespace SpriteGrabber
             txtBundleFile.Text = ofdDialog.FileName;
             AddMessage("Load file: " + ofdDialog.FileName);
 
-            LoadFile();
+            loadFile();
         }
 
         private void btnCompare_Click(object sender, EventArgs e)
@@ -274,19 +274,19 @@ namespace SpriteGrabber
             if (pbFrame1.Image.Height != pbFrame2.Image.Height || pbFrame1.Image.Width != pbFrame2.Image.Width)
                 return;
 
-            CaptureForm compareForm = new CaptureForm(this,pbFrame1.Image, pbFrame2.Image, bgColor);
+            CaptureForm compareForm = new CaptureForm(this,pbFrame1.Image, pbFrame2.Image, bacgroundColor);
 
             compareForm.Show();
         }
 
         private void pbFrame1_MouseDown(object sender, MouseEventArgs e)
         {
-            PickColor(pbFrame1, e.Location);
+            pickBackgroundColor(pbFrame1, e.Location);
         }
 
         private void pbFrame2_MouseDown(object sender, MouseEventArgs e)
         {
-            PickColor(pbFrame2, e.Location);
+            pickBackgroundColor(pbFrame2, e.Location);
         }
 
         private void btnExchangeFrames_Click(object sender, EventArgs e)
@@ -351,7 +351,7 @@ namespace SpriteGrabber
 
             txtBundleFile.Text = data[0];
 
-            LoadFile();
+            loadFile();
         }
 
         private void txtBundleFile_DragEnter(object sender, DragEventArgs e)

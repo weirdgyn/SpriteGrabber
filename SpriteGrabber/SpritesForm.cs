@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SpriteGrabber
@@ -25,25 +20,55 @@ namespace SpriteGrabber
 
             int index = 0;
 
+            Rectangle rectangle = getEqualizedRectangle(sprites);
+
+            ilSprites.ImageSize = new Size(rectangle.Width, rectangle.Height);
+
             foreach (Bitmap sprite in sprites)
             {
                 String key = String.Format("Sprite{0}",index);
 
-                if (sprite.Height > ilSprites.ImageSize.Height || sprite.Width > ilSprites.ImageSize.Width)
-                {
-                    int height = Math.Max(ilSprites.ImageSize.Height, sprite.Height);
-                    int width = Math.Max(ilSprites.ImageSize.Width, sprite.Width);
-
-                    ilSprites.ImageSize = new Size(width, height);
-                }
-
-                ilSprites.Images.Add(key, sprite);
+                ilSprites.Images.Add(key, equalizeSprite(sprite, rectangle));
 
                 ListViewItem listViewItem = lvSprites.Items.Add(key);
                 listViewItem.ImageKey = key;
 
                 index++;
             }
+        }
+
+        private Rectangle getEqualizedRectangle(List<Bitmap> sprites)
+        {
+            int width = 0;
+            int height = 0;
+
+            foreach (Bitmap sprite in sprites)
+            {
+                if (sprite.Width > width)
+                    width = sprite.Width;
+
+                if (sprite.Height > height)
+                    height = sprite.Height;
+            }
+
+            return new Rectangle(0, 0, width, height);
+        }
+
+        private Bitmap equalizeSprite(Bitmap sprite, Rectangle rectangle)
+        {
+            Bitmap bmp = new Bitmap(rectangle.Width, rectangle.Height);
+
+            int offX = (rectangle.Width - sprite.Width)/2;
+            int offY = (rectangle.Height - sprite.Height)/2;
+
+            for (int x = 0; x < sprite.Width; x++)
+                for (int y = 0; y < sprite.Height; y++)
+                {
+                    Color color = sprite.GetPixel(x, y);
+                    bmp.SetPixel(x + offX, y + offY, color);
+                }
+
+            return bmp;
         }
 
         private void lvSprites_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
