@@ -45,11 +45,15 @@ _BG Color_ textbox (placed on the right below the picturebox) reports the curren
 _Capture_ button is the trigger of the main function of the application. Pushing onto this button will open a new window where  selected frames are compared to check for differences. The result of comparation is shown in the picturebox placed in center of the window, this can be assumed as the source of the sprite. Between two frames of a same time sequence the common portion (the part that's NOT changing) is _probably_ the background and thus can be removed. The remaining elements are either sprites or portion of background changing between frames (portions of background hidden by the sprite itself, portion of background sliding in or out of the scene due to scrolling etc). Some portions of such remainder can be removed adjusting the _Offset_ up-down controls placed under the frame picturebox (please note that both offsets value can be positive or negative).
 If you have initially selected two _good_ frames and applied the correct offset the sprite is hopefully clear and isolated. Now you can _select_ it by mouse (just click and drag the cursor until the yellow rectangle include the sprite) you don't need to be extremely precise in this selection since an optimization algorithm is run just after you release the mouse button and the smallest rectangle including the sprite will be drawn for you. Once the sprite has been selected you have three choices:
 
-1. trash everything clicking on _Discard_ button;
+1. trash everything clicking on _Close_ button;
 2. store your sprite for later use clicking on _Collect_;
 3. save the selected sprite immediately with _Save_ button.
 
-If you press _Save_ you're asked for a location where to save the sprite file (please note that it will be saved as a PNG image to preserve the transparent background). _Discard_ and _Collect_ will also close the window. Once back on the main window you'll probably want to repeat the process (with different frames) to collect more and more sprites.
+If you press _Save_ you're asked for a location where to save the sprite file (please note that it will be saved as a PNG image to preserve the transparent background) but it won't store it into yout sprite collection, after saving the window will close. _Collect_ will store the selected sprite in yout global collection (but it won't save it anywere) the window will NOT close allowing you to hunt for another sprite. _Close_ will obviously close the window without saving or storing the selected sprite (if any). 
+
+Once back on the main window you'll probably want to repeat the process (with different frames) to collect more and more sprites.
+
+The amount of sprites collected on your hunting/grabbing session is reported on the right of the _Sprites_ button.
 
 After you repeated the process of grabbing some times you can look at the sprites collection by clicking the button _Sprites_. There (on the new window) you'll find sprites depicted by their miniatures enlisted on the right. Clicking on a sprite will display it in all it's glory on the left panel. If you wish to investigate details you can zoom in by using the zoom-bar on the left of the window.
 Once you're satisfied of the sprite collection you can click on _Save_ button and select the folder where the sprite collection will be saved (as a bundle of PNG images).
