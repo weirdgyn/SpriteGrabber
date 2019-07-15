@@ -104,6 +104,7 @@ MAME Copyright (C) 1997-2019  MAMEDev and contributors.
 - Sprite editor;
 - Create sprite-sheet;
 - Add installer;
+- Localization;
 - More _smartness_ in sprite grabbing procedure.
 
 ### References
