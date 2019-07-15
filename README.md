@@ -23,6 +23,7 @@ Before your first run please read the following recommendations:
 
 This application need a graphic source where to pick the elements to grab. At this stage these sources can be:
 - `MNG` bundle file(s);
+- `GIF` file(s);
 - `AVI` file(s).
 
 Both these kind of sources are produced from emulators such as [MAME](https://www.mamedev.org/). If you are using MAME you need to run it from the console with `-mngwrite` or `-aviwrite` [command line options](https://docs.mamedev.org/commandline/commandline-all.html). If you're going to use the second format take into account that AVI files recorded from MAME are pretty uncompressed: this means that it will consume an huge amount of disk space (usually 1Gb per minute of recording).
@@ -77,7 +78,7 @@ Just download/clone the project with [github](https://github.com/) and then open
 
 ### Animated GIF support
 
-Despites the widespread idea that MAME should be able to save animated GIF (Shift+F12) I haven't found a release of MAME capable of doing so. Anyway I'm going to add support for animated GIF sooner or later.
+Despites the widespread idea that MAME should be able to save animated GIF (Shift+F12) I haven't found a, recent, release of MAME capable of doing so.
 
 ### MNG File handling
 
