@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Linq;
+using System.Drawing.Imaging;
 
 namespace SpriteGrabber
 {
@@ -45,6 +46,37 @@ namespace SpriteGrabber
             AddMessage("Sprite removed");
         }
 
+        private void loadGIF()
+        {
+            Image image = Image.FromFile(txtBundleFile.Text);
+
+            FrameDimension dimension = new FrameDimension(image.FrameDimensionsList[0]);
+
+            int frames = image.GetFrameCount(dimension);
+
+            txtMaxFrames.Text = frames.ToString();
+
+            nudFrame1.Maximum = nudFrame2.Maximum = frames - 1;
+
+            if (frames < 2)
+                return;
+
+            nudFrame1.Value = 0;
+            nudFrame2.Value = 1;
+
+            image.SelectActiveFrame(dimension, 0);
+            Bitmap bmp1 = new Bitmap(image);
+            pbFrame1.Image = bmp1;
+            pbFrame1.Width = bmp1.Width;
+            pbFrame1.Height = bmp1.Height;
+
+            image.SelectActiveFrame(dimension, 1);
+            Bitmap bmp2 = new Bitmap(image);
+            pbFrame2.Image = bmp2;
+            pbFrame2.Width = bmp2.Width;
+            pbFrame2.Height = bmp2.Height;
+        }
+
         private void loadMNG()
         {
             MNG mng = new MNG();
@@ -56,8 +88,6 @@ namespace SpriteGrabber
             txtMaxFrames.Text = frames.ToString();
 
             nudFrame1.Maximum = nudFrame2.Maximum = frames - 1;
-
-            nudFrame1.Value = 0;
 
             if (frames < 2)
                 return;
@@ -129,6 +159,12 @@ namespace SpriteGrabber
                         getBackgroundColor();
                         break;
 
+                    case ".gif":
+                        loadGIF();
+                        getBackgroundColor();
+                        break;
+
+
                     default:
                         AddMessage("Unknown format");
                         break;
@@ -194,6 +230,26 @@ namespace SpriteGrabber
 
             switch (extension)
             {
+                case ".gif":
+                    Image image = Image.FromFile(txtBundleFile.Text);
+                    FrameDimension dimension = new FrameDimension(image.FrameDimensionsList[0]);
+
+                    frames = image.GetFrameCount(dimension);
+                    frameCounter.Maximum = frames - 1;
+
+                    if (frameCounter.Value < frames)
+                    {
+                        image.SelectActiveFrame(dimension, (int)frameCounter.Value);
+
+                        Bitmap bmp = new Bitmap(image);
+                        frameBox.Image = bmp;
+                        getBackgroundColor();
+
+                        AddMessage("Frame: #" + frameCounter.Value.ToString());
+                    }
+
+                    break;
+
                 case ".mng":
                     MNG mng = new MNG();
 
@@ -381,7 +437,7 @@ namespace SpriteGrabber
                 if (data!=null && data.Length>0 && !String.IsNullOrWhiteSpace(data[0]))
                 {
                     string extension = System.IO.Path.GetExtension(data[0]).ToLower();
-                    if (extension.Equals(".mng") || extension.Equals(".avi"))
+                    if (extension.Equals(".mng") || extension.Equals(".avi") || extension.Equals(".gif"))
                     {
                         e.Effect = DragDropEffects.Copy;
                         return;
