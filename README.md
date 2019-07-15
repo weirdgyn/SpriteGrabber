@@ -75,6 +75,10 @@ Besides which emulator you will use and which format you'll be going to use for 
 
 Just download/clone the project with [github](https://github.com/) and then open it in [Microsoft Visual Studio](https://visualstudio.microsoft.com/).
 
+### Animated GIF support
+
+Despites the widespread idea that MAME should be able to save animated GIF (Shift+F12) I haven't found a release of MAME capable of doing so. Anyway I'm going to add support for animated GIF sooner or later.
+
 ### MNG File handling
 
 I'm using the SprinterMNG library from Sprinter Publishing to handle `.mng` pictures bundles.
@@ -98,6 +102,7 @@ MAME Copyright (C) 1997-2019  MAMEDev and contributors.
 - Change order in sprites collection;
 - Sprite editor;
 - Create sprite-sheet;
+- Add installer;
 - More _smartness_ in sprite grabbing procedure.
 
 ### References
