@@ -86,8 +86,9 @@
             // 
             // ofdDialog
             // 
-            this.ofdDialog.Filter = "MNG picture bundle (*.mng)|*.mng|Video AVI (*.avi)|*.avi|Animated GIF (*.gif)|*.g" +
-    "if";
+            this.ofdDialog.DefaultExt = "mng";
+            this.ofdDialog.Filter = "All supported gfx files|*.mng;*.gif;*.avi|MNG picture bundle (*.mng)|*.mng|Video " +
+    "AVI (*.avi)|*.avi|Animated GIF (*.gif)|*.gif|All files (*.*)|*.*";
             this.ofdDialog.Title = "Select graphic source";
             // 
             // txtBundleFile
