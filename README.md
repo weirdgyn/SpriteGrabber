@@ -55,14 +55,14 @@ If you have initially selected two _good_ frames and applied the correct offset 
 
 If you press _Save_ you're asked for a location where to save the sprite file (please note that it will be saved as a PNG image to preserve the transparent background) but it won't store this into yout sprite collection, after saving the window will close. _Collect_ will store the selected sprite in your global collection (but it won't save it anywere) the window will NOT close allowing you to hunt for another sprite. _Close_ will obviously close the window without saving or storing the selected sprite (if any).
 
-The checkbox _Swap frames_ allows to reverse the order of checking (i.e. the right image is compared against the left one). This often allows to collect another sprite.
+The checkbox _Swap frames_ allows to reverse the order of checking (i.e. the right image is compared against the left one). This often allows to collect another sprite without need to get back to the main window.
 
 Once back on the main window you'll probably want to repeat the process (with different frames) to collect more and more sprites.
 
 The amount of sprites collected on your hunting/grabbing session is reported on the right of the _Sprites_ button.
 
-After you repeated the process of grabbing some times you can look at the sprites collection by clicking the button _Sprites_. There (on the new window) you'll find sprites depicted by their miniatures enlisted on the left. Clicking on a sprite will display it in all it's glory on the right panel. If you wish to investigate details you can zoom in by using the zoom-bar on the right of the panel istelf.
-Once you're satisfied of the sprite collection you can click on _Save_ button and select the folder where the sprite collection will be saved (as a bundle of PNG images), you can do partial saving by selecting which sprite(s) to save on the left list prior to press _Save_ button. From this window you can also remove sprites from the collection or clear the entire collection by clicking on the appropiate context menu item of the list.
+After you repeated the process of grabbing some times you can look/manage your sprites collection by clicking the button _Sprites_. There (on the new window) you'll find sprites depicted by their miniatures enlisted on the left. Clicking on a sprite will display it in all it's glory on the right panel. If you wish to investigate details you can zoom in by using the zoom-bar on the right of the panel istelf.
+Once you're satisfied of the sprite collection you can click on _Save_ button and select the folder where the sprite collection will be saved (as a bundle of PNG images), you can do partial saving by selecting which sprite(s) to save on the left list prior to press _Save_ button. From this window you can also remove sprites from the collection or clear the entire collection by clicking on the appropiate context menu item of the list. The textbox near _Save_ button must be filled with the basename for sprite's files.
 
 ### Guidelines to properly collect game frames
 
