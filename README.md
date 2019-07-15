@@ -55,7 +55,7 @@ If you have initially selected two _good_ frames and applied the correct offset 
 
 If you press _Save_ you're asked for a location where to save the sprite file (please note that it will be saved as a PNG image to preserve the transparent background) but it won't store this into yout sprite collection, after saving the window will close. _Collect_ will store the selected sprite in your global collection (but it won't save it anywere) the window will NOT close allowing you to hunt for another sprite. _Close_ will obviously close the window without saving or storing the selected sprite (if any).
 
-The checkbox _Swap frames_ allows to reverse the order of difference check (i.e. the right image is compared against the left one). This often allows to collect another sprite.
+The checkbox _Swap frames_ allows to reverse the order of checking (i.e. the right image is compared against the left one). This often allows to collect another sprite.
 
 Once back on the main window you'll probably want to repeat the process (with different frames) to collect more and more sprites.
 
