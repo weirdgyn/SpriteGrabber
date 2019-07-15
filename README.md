@@ -94,7 +94,7 @@ MAME Copyright (C) 1997-2019  MAMEDev and contributors.
 ### TODO
 
 - ~~Drag & drop support~~;
-- Handle `.gif` (animated ones) as graphics source format;
+- ~~Handle `.gif` (animated ones) as graphics source format~~;
 - Handle `.zip` pictures bundle as graphics source format;
 - ~~Equalize sprite format before saving collection~~;
 - Better layout;
