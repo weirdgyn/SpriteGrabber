@@ -6,6 +6,7 @@ namespace SpriteGrabber
 {
     public partial class CaptureForm : Form
     {
+
         private enum DrawingState
         {
             Idle,
@@ -19,6 +20,7 @@ namespace SpriteGrabber
             Color2
         }
 
+        private static Color noColor = Color.FromArgb(0, 0, 0, 0);
         private MainForm mainForm;
         private Point startPoint;
         private Point endPoint;
@@ -49,6 +51,7 @@ namespace SpriteGrabber
         {
             int offsetX = (int)nudOffsetX.Value;
             int offsetY = (int)nudOffsetY.Value;
+
             Bitmap bmp = new Bitmap(bmp1.Width, bmp1.Height);
 
             for (int x = 0; x < bmp1.Width; x++)
@@ -62,12 +65,20 @@ namespace SpriteGrabber
 
                     Color color1, color2;
 
-                    color1 = bmp1.GetPixel(x, y);
-                    color2 = bmp2.GetPixel(x + offsetX, y + offsetY);
+                    if (!cbSwapFrames.Checked)
+                    {
+                        color1 = bmp1.GetPixel(x, y);
+                        color2 = bmp2.GetPixel(x + offsetX, y + offsetY);
+                    }
+                    else
+                    {
+                        color1 = bmp2.GetPixel(x, y);
+                        color2 = bmp1.GetPixel(x + offsetX, y + offsetY);
+                    }
 
                     if (color1 != color2)
                     {
-                        if (color1 == backgroundColor)
+                        if (color1 == backgroundColor || color1 == noColor)
                             bmp.SetPixel(x, y, Color.Transparent);
                         else
                         {
@@ -128,8 +139,6 @@ namespace SpriteGrabber
 
             if (bmp.Width == 0 || bmp.Height == 0)
                 return;
-
-            Color noColor = Color.FromArgb(0, 0, 0, 0);
 
             int x0 = rectangle.X+rectangle.Width-1;
             int y0 = rectangle.Y+rectangle.Height-1;
@@ -287,6 +296,11 @@ namespace SpriteGrabber
             {
                 mainForm.AddMessage("Exception:" + ex.Message);
             }
+        }
+
+        private void cbSwapFrames_CheckedChanged(object sender, EventArgs e)
+        {
+            pbCaptureImage.Image = getDifferenceBmp();
         }
     }
 }

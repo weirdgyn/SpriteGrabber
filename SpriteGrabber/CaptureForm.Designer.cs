@@ -46,6 +46,7 @@
             this.lblXValue = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblY = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblYValue = new System.Windows.Forms.ToolStripStatusLabel();
+            this.cbSwapFrames = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbCaptureImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudOffsetY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudOffsetX)).BeginInit();
@@ -233,6 +234,18 @@
             this.lblYValue.Size = new System.Drawing.Size(17, 17);
             this.lblYValue.Text = "--";
             // 
+            // cbSwapFrames
+            // 
+            this.cbSwapFrames.AutoSize = true;
+            this.cbSwapFrames.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cbSwapFrames.Location = new System.Drawing.Point(325, 371);
+            this.cbSwapFrames.Name = "cbSwapFrames";
+            this.cbSwapFrames.Size = new System.Drawing.Size(87, 17);
+            this.cbSwapFrames.TabIndex = 26;
+            this.cbSwapFrames.Text = "Swap frames";
+            this.cbSwapFrames.UseVisualStyleBackColor = true;
+            this.cbSwapFrames.CheckedChanged += new System.EventHandler(this.cbSwapFrames_CheckedChanged);
+            // 
             // CaptureForm
             // 
             this.AcceptButton = this.btnCollect;
@@ -240,6 +253,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(425, 476);
+            this.Controls.Add(this.cbSwapFrames);
             this.Controls.Add(this.ssStatus);
             this.Controls.Add(this.txtSpriteSize);
             this.Controls.Add(this.label1);
@@ -288,5 +302,6 @@
         private System.Windows.Forms.ToolStripStatusLabel lblXValue;
         private System.Windows.Forms.ToolStripStatusLabel lblY;
         private System.Windows.Forms.ToolStripStatusLabel lblYValue;
+        private System.Windows.Forms.CheckBox cbSwapFrames;
     }
 }
