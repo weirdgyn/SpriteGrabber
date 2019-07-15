@@ -25,7 +25,7 @@ This application need a graphic source where to pick the elements to grab. At th
 
 Both these kind of sources are produced from emulators such as [MAME](https://www.mamedev.org/). If you are using MAME you need to run it from the console with `-mngwrite` or `-aviwrite` [command line options](https://docs.mamedev.org/commandline/commandline-all.html). Snapping into MNG files can be achieved also with Shift+F12 key combination. If you're going to use the second format take into account that AVI files recorded from MAME are pretty uncompressed: this means that it will consume an huge amount of disk space (usually 1Gb per minute of recording).
 
-Despites the widespread idea that MAME should be able to save animated GIF (Shift+F12) I haven't found a, recent, release of MAME capable of doing so anyway I added support for this kind of files but you will probably never have a chance to use it.
+Despites the widespread idea that MAME should be able to save animated GIF (Shift+F12) I haven't found a recent release of MAME capable of doing so. I added support for this kind of files but you will probably never have a chance to use it.
 
 Once launched the application shows the main form where you can recognize four main items:
 - _Frames bundles_ textbox;
@@ -53,7 +53,9 @@ If you have initially selected two _good_ frames and applied the correct offset 
 2. store your sprite for later use clicking on _Collect_;
 3. immediately save the selected sprite  with _Save_ button.
 
-If you press _Save_ you're asked for a location where to save the sprite file (please note that it will be saved as a PNG image to preserve the transparent background) but it won't store this into yout sprite collection, after saving the window will close. _Collect_ will store the selected sprite in your global collection (but it won't save it anywere) the window will NOT close allowing you to hunt for another sprite. _Close_ will obviously close the window without saving or storing the selected sprite (if any). 
+If you press _Save_ you're asked for a location where to save the sprite file (please note that it will be saved as a PNG image to preserve the transparent background) but it won't store this into yout sprite collection, after saving the window will close. _Collect_ will store the selected sprite in your global collection (but it won't save it anywere) the window will NOT close allowing you to hunt for another sprite. _Close_ will obviously close the window without saving or storing the selected sprite (if any).
+
+The checkbox _Swap frames_ allows to reverse the order of difference check (i.e. the right image is compared against the left one). This often allows to collect another sprite.
 
 Once back on the main window you'll probably want to repeat the process (with different frames) to collect more and more sprites.
 
