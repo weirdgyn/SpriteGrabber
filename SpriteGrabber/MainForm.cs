@@ -46,6 +46,28 @@ namespace SpriteGrabber
             AddMessage("Sprite removed");
         }
 
+        public Bitmap createChecker(int width, int height, int tileWidth, Color color1, Color color2)
+        {
+            Bitmap bitmap = new Bitmap(width, height);
+
+            using (Graphics g = Graphics.FromImage(bitmap))
+            {
+                int hTiles = width / tileWidth;
+                int vTiles = height / tileWidth;
+                SolidBrush brush1 = new SolidBrush(color1);
+                SolidBrush brush2 = new SolidBrush(color2);
+
+                for (int x = 0; x < hTiles; x++)
+                    for (int y = 0; y < vTiles; y++)
+                        if ((x + y) % 2 == 0)
+                            g.FillRectangle(brush1, x * tileWidth, y * tileWidth, tileWidth, tileWidth);
+                        else
+                            g.FillRectangle(brush2, x * tileWidth, y * tileWidth, tileWidth, tileWidth);
+            }
+
+            return bitmap;
+        }
+
         private void loadGIF()
         {
             Image image = Image.FromFile(txtBundleFile.Text);

@@ -45,6 +45,7 @@ namespace SpriteGrabber
             this.backgroundColor = backgroundColor;
 
             pbCaptureImage.Image = getDifferenceBmp();
+            pbCaptureImage.BackgroundImage = mainForm.createChecker(pbCaptureImage.Width, pbCaptureImage.Height, 16, Color.LightGray, Color.WhiteSmoke);
         }
 
         private Bitmap getDifferenceBmp()
