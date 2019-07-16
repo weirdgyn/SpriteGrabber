@@ -33,6 +33,8 @@ namespace SpriteGrabber
         public CaptureForm()
         {
             InitializeComponent();
+
+            InitializeBackgroundImage();
         }
 
         public CaptureForm(MainForm parent, Image image1, Image image2, Color backgroundColor) : this()
@@ -46,6 +48,24 @@ namespace SpriteGrabber
 
             pbCaptureImage.Image = getDifferenceBmp();
             pbCaptureImage.BackgroundImage = mainForm.createChecker(pbCaptureImage.Width, pbCaptureImage.Height, 16, Color.LightGray, Color.WhiteSmoke);
+        }
+
+        private void InitializeBackgroundImage()
+        {
+            Color getColor(int x, int y)
+            {
+                Color color = Color.LightGray;
+
+                return color;
+            }
+
+            Bitmap bitmap = new Bitmap(pbCaptureImage.Width, pbCaptureImage.Height);
+
+            for (int x = 0; x < bitmap.Width; x++)
+                for (int y = 0; y < bitmap.Height; y++)
+                    bitmap.SetPixel(x,y,getColor(x,y));
+
+            pbCaptureImage.BackgroundImage = bitmap;
         }
 
         private Bitmap getDifferenceBmp()
@@ -123,8 +143,6 @@ namespace SpriteGrabber
                 Bitmap bmpFull = new Bitmap(pbCaptureImage.Image);
                 sprite = bmpFull.Clone(rectangle, bmpFull.PixelFormat);
             }
-            else
-                sprite = new Bitmap(pbCaptureImage.Image);
 
             return sprite;
         }
@@ -239,7 +257,7 @@ namespace SpriteGrabber
 
         private void pbCaptureImage_MouseLeave(object sender, EventArgs e)
         {
-            lblXValue.Text = lblYValue.Text = "";
+            lblXValue.Text = lblYValue.Text = "---";
         }
 
         private void nudOffsetX_ValueChanged(object sender, EventArgs e)
@@ -302,6 +320,7 @@ namespace SpriteGrabber
         private void cbSwapFrames_CheckedChanged(object sender, EventArgs e)
         {
             pbCaptureImage.Image = getDifferenceBmp();
+            nudOffsetX.Value = -nudOffsetX.Value;
         }
     }
 }

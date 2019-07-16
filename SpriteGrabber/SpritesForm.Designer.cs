@@ -110,7 +110,8 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(322, 443);
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.Location = new System.Drawing.Point(561, 443);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 2;
@@ -120,7 +121,8 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(403, 443);
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.Location = new System.Drawing.Point(480, 443);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 3;
@@ -149,27 +151,33 @@
             // 
             // txtSpriteBaseName
             // 
-            this.txtSpriteBaseName.Location = new System.Drawing.Point(484, 445);
+            this.txtSpriteBaseName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtSpriteBaseName.Location = new System.Drawing.Point(288, 444);
             this.txtSpriteBaseName.Name = "txtSpriteBaseName";
             this.txtSpriteBaseName.Size = new System.Drawing.Size(186, 20);
             this.txtSpriteBaseName.TabIndex = 5;
+            this.txtSpriteBaseName.Text = "sprite";
             // 
             // lblSpriteBaseName
             // 
+            this.lblSpriteBaseName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblSpriteBaseName.AutoSize = true;
-            this.lblSpriteBaseName.Location = new System.Drawing.Point(676, 448);
+            this.lblSpriteBaseName.Location = new System.Drawing.Point(193, 448);
             this.lblSpriteBaseName.Name = "lblSpriteBaseName";
-            this.lblSpriteBaseName.Size = new System.Drawing.Size(89, 13);
+            this.lblSpriteBaseName.Size = new System.Drawing.Size(92, 13);
             this.lblSpriteBaseName.TabIndex = 6;
-            this.lblSpriteBaseName.Text = "Sprite base name";
+            this.lblSpriteBaseName.Text = "Sprite base name:";
             // 
             // txtZoom
             // 
+            this.txtZoom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtZoom.Location = new System.Drawing.Point(771, 12);
             this.txtZoom.Name = "txtZoom";
             this.txtZoom.ReadOnly = true;
             this.txtZoom.Size = new System.Drawing.Size(45, 20);
             this.txtZoom.TabIndex = 7;
+            this.txtZoom.Text = "1";
+            this.txtZoom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // SpritesForm
             // 

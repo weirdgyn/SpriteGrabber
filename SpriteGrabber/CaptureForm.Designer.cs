@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pbCaptureImage = new System.Windows.Forms.PictureBox();
             this.sfdDialog = new System.Windows.Forms.SaveFileDialog();
             this.lblSprite = new System.Windows.Forms.Label();
             this.txtSpriteFile = new System.Windows.Forms.TextBox();
@@ -46,29 +45,13 @@
             this.lblXValue = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblY = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblYValue = new System.Windows.Forms.ToolStripStatusLabel();
+            this.pbCaptureImage = new System.Windows.Forms.PictureBox();
             this.cbSwapFrames = new System.Windows.Forms.CheckBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCaptureImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudOffsetY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudOffsetX)).BeginInit();
             this.ssStatus.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCaptureImage)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pbCaptureImage
-            // 
-            this.pbCaptureImage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbCaptureImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbCaptureImage.Location = new System.Drawing.Point(12, 12);
-            this.pbCaptureImage.Name = "pbCaptureImage";
-            this.pbCaptureImage.Size = new System.Drawing.Size(400, 300);
-            this.pbCaptureImage.TabIndex = 0;
-            this.pbCaptureImage.TabStop = false;
-            this.pbCaptureImage.Paint += new System.Windows.Forms.PaintEventHandler(this.pbDifferenceImage_Paint);
-            this.pbCaptureImage.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbDifferenceImage_MouseDown);
-            this.pbCaptureImage.MouseLeave += new System.EventHandler(this.pbCaptureImage_MouseLeave);
-            this.pbCaptureImage.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pbDifferenceImage_MouseMove);
-            this.pbCaptureImage.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pbDifferenceImage_MouseUp);
             // 
             // sfdDialog
             // 
@@ -218,9 +201,10 @@
             // 
             // lblXValue
             // 
+            this.lblXValue.AutoSize = false;
             this.lblXValue.Name = "lblXValue";
-            this.lblXValue.Size = new System.Drawing.Size(17, 17);
-            this.lblXValue.Text = "--";
+            this.lblXValue.Size = new System.Drawing.Size(22, 17);
+            this.lblXValue.Text = "---";
             // 
             // lblY
             // 
@@ -230,9 +214,27 @@
             // 
             // lblYValue
             // 
+            this.lblYValue.AutoSize = false;
             this.lblYValue.Name = "lblYValue";
-            this.lblYValue.Size = new System.Drawing.Size(17, 17);
-            this.lblYValue.Text = "--";
+            this.lblYValue.Size = new System.Drawing.Size(22, 17);
+            this.lblYValue.Text = "---";
+            // 
+            // pbCaptureImage
+            // 
+            this.pbCaptureImage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbCaptureImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbCaptureImage.Location = new System.Drawing.Point(12, 12);
+            this.pbCaptureImage.Name = "pbCaptureImage";
+            this.pbCaptureImage.Size = new System.Drawing.Size(400, 300);
+            this.pbCaptureImage.TabIndex = 0;
+            this.pbCaptureImage.TabStop = false;
+            this.pbCaptureImage.Paint += new System.Windows.Forms.PaintEventHandler(this.pbDifferenceImage_Paint);
+            this.pbCaptureImage.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbDifferenceImage_MouseDown);
+            this.pbCaptureImage.MouseLeave += new System.EventHandler(this.pbCaptureImage_MouseLeave);
+            this.pbCaptureImage.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pbDifferenceImage_MouseMove);
+            this.pbCaptureImage.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pbDifferenceImage_MouseUp);
             // 
             // cbSwapFrames
             // 
@@ -272,11 +274,11 @@
             this.Name = "CaptureForm";
             this.Text = "Select sprite...";
             this.Load += new System.EventHandler(this.CompareForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pbCaptureImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudOffsetY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudOffsetX)).EndInit();
             this.ssStatus.ResumeLayout(false);
             this.ssStatus.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCaptureImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

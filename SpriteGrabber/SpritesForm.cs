@@ -77,6 +77,7 @@ namespace SpriteGrabber
         {
             Image image = ilSprites.Images[e.Item.ImageKey];
             pbSprite.Image = image;
+            tbZoom.Value = 1;
         }
 
         private void tbZoom_Scroll(object sender, EventArgs e)
