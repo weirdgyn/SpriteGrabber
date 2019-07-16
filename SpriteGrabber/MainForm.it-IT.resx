@@ -117,34 +117,46 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+  <data name="ofdDialog.Title" xml:space="preserve">
+    <value>Selezionare la sorgente gfx</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>500, 300</value>
+  <data name="lblGraphicSource.Text" xml:space="preserve">
+    <value>Sorgente gfx:</value>
   </data>
-  <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>500, 300</value>
+  <data name="lblFrame1.Text" xml:space="preserve">
+    <value>Frame</value>
   </data>
-  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>500, 300</value>
+  <data name="lblFrame2.Text" xml:space="preserve">
+    <value>Frame</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterScreen</value>
+  <data name="chTime.Text" xml:space="preserve">
+    <value>Data/ora</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>SpriteGrabber</value>
-    <comment>@Invariant</comment>
+  <data name="chMessage.Text" xml:space="preserve">
+    <value>Messaggio</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>SplashForm</value>
+  <data name="miSave.Text" xml:space="preserve">
+    <value>Salva</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="miClear.Text" xml:space="preserve">
+    <value>Cancella</value>
+  </data>
+  <data name="lblMessages.Text" xml:space="preserve">
+    <value>Messaggi:</value>
+  </data>
+  <data name="btnCapture.Text" xml:space="preserve">
+    <value>Cattura</value>
+  </data>
+  <data name="lblBGColor.Text" xml:space="preserve">
+    <value>Colore BG:</value>
+  </data>
+  <data name="lblMaxFrames.Text" xml:space="preserve">
+    <value>Frames:</value>
+  </data>
+  <data name="btnSprites.Text" xml:space="preserve">
+    <value>Sprites</value>
+  </data>
+  <data name="ofdDialog.Filter" xml:space="preserve">
+    <value>Tutti i formati gfx supportati|*.mng;*.gif;*.avi|Set immagini MNG (*.mng)|*.mng|Video AVI (*.avi)|*.avi|GIF animata (*.gif)|*.gif|Tutti i files (*.*)|*.*</value>
   </data>
 </root>
