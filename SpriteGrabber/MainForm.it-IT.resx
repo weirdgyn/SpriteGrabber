@@ -120,9 +120,6 @@
   <data name="ofdDialog.Title" xml:space="preserve">
     <value>Selezionare la sorgente gfx</value>
   </data>
-  <data name="lblGraphicSource.Text" xml:space="preserve">
-    <value>Sorgente gfx:</value>
-  </data>
   <data name="lblFrame1.Text" xml:space="preserve">
     <value>Frame</value>
   </data>
@@ -158,5 +155,8 @@
   </data>
   <data name="ofdDialog.Filter" xml:space="preserve">
     <value>Tutti i formati gfx supportati|*.mng;*.gif;*.avi|Set immagini MNG (*.mng)|*.mng|Video AVI (*.avi)|*.avi|GIF animata (*.gif)|*.gif|Tutti i files (*.*)|*.*</value>
+  </data>
+  <data name="lblBundleFile.Text" xml:space="preserve">
+    <value>Sorgente gfx:</value>
   </data>
 </root>

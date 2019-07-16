@@ -198,34 +198,31 @@
   <data name="&gt;&gt;txtBundleFile.ZOrder" xml:space="preserve">
     <value>17</value>
   </data>
-  <data name="label1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="lblBundleFile.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblBundleFile.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 7</value>
+  <data name="lblBundleFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 7</value>
   </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 13</value>
+  <data name="lblBundleFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
   </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblBundleFile.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="lblGraphicSource.Text" xml:space="preserve">
-    <value>Graphic source:</value>
+  <data name="&gt;&gt;lblBundleFile.Name" xml:space="preserve">
+    <value>lblBundleFile</value>
   </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblBundleFile.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblBundleFile.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblBundleFile.ZOrder" xml:space="preserve">
     <value>16</value>
   </data>
   <data name="btnSelectFile.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -713,5 +710,8 @@
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblBundleFile.Text" xml:space="preserve">
+    <value>Gfx source file:</value>
   </data>
 </root>

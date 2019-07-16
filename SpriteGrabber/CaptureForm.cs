@@ -47,7 +47,7 @@ namespace SpriteGrabber
             this.backgroundColor = backgroundColor;
 
             pbCaptureImage.Image = getDifferenceBmp();
-            pbCaptureImage.BackgroundImage = mainForm.createChecker(pbCaptureImage.Width, pbCaptureImage.Height, 16, Color.LightGray, Color.WhiteSmoke);
+            pbCaptureImage.BackgroundImage = mainForm.createChecker(pbCaptureImage.Width, pbCaptureImage.Height, SpriteGrabber.Properties.Settings.Default.CheckerTileWidth, Color.LightGray, Color.WhiteSmoke);
         }
 
         private void InitializeBackgroundImage()
@@ -250,9 +250,9 @@ namespace SpriteGrabber
         private void pbDifferenceImage_Paint(object sender, PaintEventArgs e)
         {
             if (drawingState == DrawingState.Setting)
-                e.Graphics.DrawRectangle(new Pen(Color.Yellow), getRectangle());
+                e.Graphics.DrawRectangle(new Pen(SpriteGrabber.Properties.Settings.Default.SettingRectangleColor), getRectangle());
             else if (drawingState == DrawingState.Set)
-                e.Graphics.DrawRectangle(new Pen(Color.Red), getRectangle());
+                e.Graphics.DrawRectangle(new Pen(SpriteGrabber.Properties.Settings.Default.SetRectangleColor), getRectangle());
         }
 
         private void pbCaptureImage_MouseLeave(object sender, EventArgs e)

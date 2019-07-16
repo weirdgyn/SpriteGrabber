@@ -24,7 +24,7 @@ namespace SpriteGrabber
 
             ilSprites.ImageSize = new Size(rectangle.Width, rectangle.Height);
 
-            pbSprite.BackgroundImage = mainForm.createChecker(pbSprite.Width, pbSprite.Height, 16, Color.LightGray, Color.WhiteSmoke);
+            pbSprite.BackgroundImage = mainForm.createChecker(pbSprite.Width, pbSprite.Height, SpriteGrabber.Properties.Settings.Default.CheckerTileWidth, Color.LightGray, Color.WhiteSmoke);
 
             foreach (Bitmap sprite in sprites)
             {

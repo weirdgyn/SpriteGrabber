@@ -136,7 +136,7 @@
     <value>sprite</value>
   </data>
   <data name="lblSpriteBaseName.Text" xml:space="preserve">
-    <value>Nome di base sprite:</value>
+    <value>Base nome sprite:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Sprites</value>

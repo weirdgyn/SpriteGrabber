@@ -84,14 +84,13 @@ namespace SpriteGrabber
                 return;
 
             nudFrame1.Value = 0;
-            nudFrame2.Value = 1;
-
             image.SelectActiveFrame(dimension, 0);
             Bitmap bmp1 = new Bitmap(image);
             pbFrame1.Image = bmp1;
             pbFrame1.Width = bmp1.Width;
             pbFrame1.Height = bmp1.Height;
 
+            nudFrame2.Value = 1;
             image.SelectActiveFrame(dimension, 1);
             Bitmap bmp2 = new Bitmap(image);
             pbFrame2.Image = bmp2;
@@ -115,13 +114,12 @@ namespace SpriteGrabber
                 return;
 
             nudFrame1.Value = 0;
-            nudFrame2.Value = 1;
-
             Bitmap bmp1 = mng.ToBitmap(0);
             pbFrame1.Image = bmp1;
             pbFrame1.Width = bmp1.Width;
             pbFrame1.Height = bmp1.Height;
 
+            nudFrame2.Value = 1;
             Bitmap bmp2 = mng.ToBitmap(1);
             pbFrame2.Image = bmp2;
             pbFrame2.Width = bmp2.Width;
@@ -143,16 +141,15 @@ namespace SpriteGrabber
                 if (frames < 2)
                     return;
 
-                nudFrame1.Value = 0;
-                nudFrame2.Value = 1;
-
                 txtMaxFrames.Text = frames.ToString();
 
+                nudFrame1.Value = 0;
                 Bitmap bmp1 = videoFileReader.ReadVideoFrame(0);
                 pbFrame1.Image = bmp1;
                 pbFrame1.Width = bmp1.Width;
                 pbFrame1.Height = bmp1.Height;
 
+                nudFrame2.Value = 1;
                 Bitmap bmp2 = videoFileReader.ReadVideoFrame(1);
                 pbFrame2.Image = bmp2;
                 pbFrame2.Width = bmp2.Width;

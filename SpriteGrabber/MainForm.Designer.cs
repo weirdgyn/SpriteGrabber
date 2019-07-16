@@ -34,7 +34,7 @@
             this.pbFrame2 = new System.Windows.Forms.PictureBox();
             this.ofdDialog = new System.Windows.Forms.OpenFileDialog();
             this.txtBundleFile = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblBundleFile = new System.Windows.Forms.Label();
             this.btnSelectFile = new System.Windows.Forms.Button();
             this.nudFrame1 = new System.Windows.Forms.NumericUpDown();
             this.lblFrame1 = new System.Windows.Forms.Label();
@@ -94,10 +94,10 @@
             this.txtBundleFile.DragDrop += new System.Windows.Forms.DragEventHandler(this.txtBundleFile_DragDrop);
             this.txtBundleFile.DragEnter += new System.Windows.Forms.DragEventHandler(this.txtBundleFile_DragEnter);
             // 
-            // label1
+            // lblBundleFile
             // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
+            resources.ApplyResources(this.lblBundleFile, "lblBundleFile");
+            this.lblBundleFile.Name = "lblBundleFile";
             // 
             // btnSelectFile
             // 
@@ -258,7 +258,7 @@
             this.Controls.Add(this.lblFrame1);
             this.Controls.Add(this.nudFrame1);
             this.Controls.Add(this.btnSelectFile);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblBundleFile);
             this.Controls.Add(this.txtBundleFile);
             this.Controls.Add(this.pbFrame2);
             this.Controls.Add(this.pbFrame1);
@@ -280,7 +280,7 @@
         private System.Windows.Forms.PictureBox pbFrame2;
         private System.Windows.Forms.OpenFileDialog ofdDialog;
         private System.Windows.Forms.TextBox txtBundleFile;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblBundleFile;
         private System.Windows.Forms.Button btnSelectFile;
         private System.Windows.Forms.NumericUpDown nudFrame1;
         private System.Windows.Forms.Label lblFrame1;
