@@ -34,13 +34,13 @@ Once launched the application shows the main form where you can recognize four m
 
 Sited below the two frames picturebox there are a number of widgets (buttons, textboxes, up-down controls) to adjust, report and run the workflow actions.
 
-The _Frame bundles_ texbox simply report the filename of the last selected graphic source. To select a graphic source you need to push onto the button on the right of the textbox and select a suitable file from your archives. Once the file has been selected the application will investigate the file collecting the total frames number and then try to load the first two frames to place them in _Frames_ pictureboxes.
+The _Frame bundles_ texbox simply report the filename of the last selected graphic source. To select a graphic source you need to push onto the button on the right of the textbox and select a suitable file from your archives (or drag & drop the same file over the textbox). Once the file has been selected the application will investigate it collecting the total frames number and loading the first two frames to place them in _Frames_ pictureboxes.
 
 Each _frame_ picturebox is used to depict the frame selected by the user acting on up-down controls placed under the picturebox itself.
 The button placed between the two up-down control is used to exchange the frames into the pictureboxes (and frames indexes accordingly).
-Those frames are used by the application to _summon_ the sprite, you should try to select two frames with the most _common_ background and the sprite meant to be collected in two different and not overlapping positions.
+Those frames are used by the application to _summon_ the sprite during the grabbing process, as a general hint you should try to select two frames with the most _common_ background and the sprite meant to be collected in two different and not overlapping positions.
 
-_Messages_ listview is a simple log of actions and results/errors occurred during the application run. The list itself can be cleared / saved acting on the listview context menu.
+_Messages_ listview is a simple log of actions and results/errors occurred during the application run. The list itself can be cleared / saved acting on its context menu.
 
 _Frames_ textbox (placed on the left below the picturebox) reports the total number of frames available in the graphic source.
 
