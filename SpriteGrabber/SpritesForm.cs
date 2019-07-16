@@ -106,19 +106,19 @@ namespace SpriteGrabber
         {
             if (String.IsNullOrWhiteSpace(txtSpriteBaseName.Text))
             {
-                MessageBox.Show("You must select a sprite basename");
+                MessageBox.Show(SpriteGrabber.Properties.Resources.MustSelectBasename);
                 return;
             }
 
             if (fbdFolder.ShowDialog() != DialogResult.OK)
             {
-                mainForm.AddMessage("User aborted");
+                mainForm.AddMessage(SpriteGrabber.Properties.Resources.UserAborted);
                 return;
             }
 
             int index = 0;
 
-            mainForm.AddMessage("Saving sprites in: " + fbdFolder.SelectedPath);
+            mainForm.AddMessage(SpriteGrabber.Properties.Resources.SavingSpritesIn + fbdFolder.SelectedPath);
 
             if (lvSprites.SelectedItems.Count == 0)
             {
@@ -134,7 +134,7 @@ namespace SpriteGrabber
                     }
                     catch (Exception ex)
                     {
-                        mainForm.AddMessage("Exception: " + ex.Message);
+                        mainForm.AddMessage(SpriteGrabber.Properties.Resources.Exception + ex.Message);
                     }
                 }
             }
@@ -155,13 +155,13 @@ namespace SpriteGrabber
                     }
                     catch (Exception ex)
                     {
-                        mainForm.AddMessage("Exception: " + ex.Message);
+                        mainForm.AddMessage(SpriteGrabber.Properties.Resources.Exception + ex.Message);
 
                     }
                 }
             }
 
-            mainForm.AddMessage(index.ToString() + " sprite saved");
+            mainForm.AddMessage(index.ToString() + SpriteGrabber.Properties.Resources.SpriteSaved);
         }
 
         private void miClear_Click(object sender, EventArgs e)

@@ -309,11 +309,11 @@ namespace SpriteGrabber
 
                 txtSpriteFile.Text = sfdDialog.FileName;
 
-                mainForm.AddMessage("Saving sprite to: " + sfdDialog.FileName);
+                mainForm.AddMessage(SpriteGrabber.Properties.Resources.SavingSpriteTo + sfdDialog.FileName);
             }
             catch (Exception ex)
             {
-                mainForm.AddMessage("Exception:" + ex.Message);
+                mainForm.AddMessage(SpriteGrabber.Properties.Resources.Exception + ex.Message);
             }
         }
 

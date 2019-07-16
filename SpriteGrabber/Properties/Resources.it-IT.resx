@@ -117,53 +117,49 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="splash" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\splash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="SavingSpriteTo" xml:space="preserve">
-    <value>Saving sprite to: </value>
+    <value>Sprite salvato in:</value>
   </data>
   <data name="Exception" xml:space="preserve">
-    <value>Exception:</value>
+    <value>Eccezione:</value>
   </data>
   <data name="UserAborted" xml:space="preserve">
-    <value>User aborted</value>
+    <value>Operazione annullata dall'utente</value>
   </data>
   <data name="SavingSpritesIn" xml:space="preserve">
-    <value>Saving sprites in: </value>
+    <value>Sprites salvati in:</value>
   </data>
   <data name="SpriteSaved" xml:space="preserve">
-    <value> sprite saved</value>
+    <value> sprite salvato</value>
   </data>
   <data name="MustSelectBasename" xml:space="preserve">
-    <value>You must select a sprite basename</value>
+    <value>Devi prima selezionare una nome base per la collezione</value>
   </data>
   <data name="SpriteStored" xml:space="preserve">
-    <value>Sprite stored</value>
+    <value>Sprite memorizzato</value>
   </data>
   <data name="SpriteCollectionCleared" xml:space="preserve">
-    <value>Sprite collection cleared</value>
+    <value>Collezione cancellata</value>
   </data>
   <data name="SpriteRemoved" xml:space="preserve">
-    <value>Sprite removed</value>
+    <value>Sprite eliminato</value>
   </data>
   <data name="BackgroundColorSelected" xml:space="preserve">
-    <value>Background color selected:</value>
+    <value>Colore di sfondo selezionato:</value>
   </data>
   <data name="Frame" xml:space="preserve">
     <value>Frame #:</value>
   </data>
   <data name="UnknownFormat" xml:space="preserve">
-    <value>Unknown format</value>
+    <value>Formato sconosciuto</value>
   </data>
   <data name="LoadFile" xml:space="preserve">
-    <value>Load file: </value>
+    <value>File caricato:</value>
   </data>
   <data name="LogFileDialogTitle" xml:space="preserve">
-    <value>Log file</value>
+    <value>File di registro</value>
   </data>
   <data name="LogFileDialogFilter" xml:space="preserve">
-    <value>Text files (*.txt)|*.txt</value>
+    <value>File di testo (*.txt)|*.txt</value>
   </data>
 </root>

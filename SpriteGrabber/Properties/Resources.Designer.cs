@@ -61,12 +61,147 @@ namespace SpriteGrabber.Properties {
         }
         
         /// <summary>
+        ///   Cerca una stringa localizzata simile a Background color selected:.
+        /// </summary>
+        internal static string BackgroundColorSelected {
+            get {
+                return ResourceManager.GetString("BackgroundColorSelected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Exception:.
+        /// </summary>
+        internal static string Exception {
+            get {
+                return ResourceManager.GetString("Exception", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Frame #:.
+        /// </summary>
+        internal static string Frame {
+            get {
+                return ResourceManager.GetString("Frame", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Load file: .
+        /// </summary>
+        internal static string LoadFile {
+            get {
+                return ResourceManager.GetString("LoadFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Text files (*.txt)|*.txt.
+        /// </summary>
+        internal static string LogFileDialogFilter {
+            get {
+                return ResourceManager.GetString("LogFileDialogFilter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Log file.
+        /// </summary>
+        internal static string LogFileDialogTitle {
+            get {
+                return ResourceManager.GetString("LogFileDialogTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a You must select a sprite basename.
+        /// </summary>
+        internal static string MustSelectBasename {
+            get {
+                return ResourceManager.GetString("MustSelectBasename", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Saving sprites in: .
+        /// </summary>
+        internal static string SavingSpritesIn {
+            get {
+                return ResourceManager.GetString("SavingSpritesIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Saving sprite to: .
+        /// </summary>
+        internal static string SavingSpriteTo {
+            get {
+                return ResourceManager.GetString("SavingSpriteTo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap splash {
             get {
                 object obj = ResourceManager.GetObject("splash", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Sprite collection cleared.
+        /// </summary>
+        internal static string SpriteCollectionCleared {
+            get {
+                return ResourceManager.GetString("SpriteCollectionCleared", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Sprite removed.
+        /// </summary>
+        internal static string SpriteRemoved {
+            get {
+                return ResourceManager.GetString("SpriteRemoved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a  sprite saved.
+        /// </summary>
+        internal static string SpriteSaved {
+            get {
+                return ResourceManager.GetString("SpriteSaved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Sprite stored.
+        /// </summary>
+        internal static string SpriteStored {
+            get {
+                return ResourceManager.GetString("SpriteStored", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Unknown format.
+        /// </summary>
+        internal static string UnknownFormat {
+            get {
+                return ResourceManager.GetString("UnknownFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a User aborted.
+        /// </summary>
+        internal static string UserAborted {
+            get {
+                return ResourceManager.GetString("UserAborted", resourceCulture);
             }
         }
     }

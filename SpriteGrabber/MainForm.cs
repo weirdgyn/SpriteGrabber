@@ -28,7 +28,7 @@ namespace SpriteGrabber
         {
             lstSprites.Add(sprite);
             txtSprites.Text = lstSprites.Count.ToString();
-            AddMessage("Sprite stored");
+            AddMessage(SpriteGrabber.Properties.Resources.SpriteStored);
         }
 
         public void clearSprites()
@@ -36,14 +36,14 @@ namespace SpriteGrabber
             lstSprites.Clear();
             txtSprites.Text = "";
 
-            AddMessage("Sprite collection cleared");
+            AddMessage(SpriteGrabber.Properties.Resources.SpriteCollectionCleared);
         }
 
         public void discardSprite(int index)
         {
             lstSprites.RemoveAt(index);
             txtSprites.Text = lstSprites.Count.ToString();
-            AddMessage("Sprite removed");
+            AddMessage(SpriteGrabber.Properties.Resources.SpriteRemoved);
         }
 
         public Bitmap createChecker(int width, int height, int tileWidth, Color color1, Color color2)
@@ -188,13 +188,13 @@ namespace SpriteGrabber
 
 
                     default:
-                        AddMessage("Unknown format");
+                        AddMessage(SpriteGrabber.Properties.Resources.UnknownFormat);
                         break;
                 }
             }
             catch (Exception ex)
             {
-                AddMessage("Exception: " + ex.Message);
+                AddMessage(SpriteGrabber.Properties.Resources.Exception + ex.Message);
             }
         }
 
@@ -207,7 +207,7 @@ namespace SpriteGrabber
             bacgroundColor = bmp.GetPixel(location.X, location.Y);
             string colorString = "#" + bacgroundColor.R.ToString("X2") + bacgroundColor.G.ToString("X2") + bacgroundColor.B.ToString("X2");
             txtBGColor.Text = colorString;
-            AddMessage("Background color selected:" + colorString);
+            AddMessage(SpriteGrabber.Properties.Resources.BackgroundColorSelected + colorString);
         }
 
         private void getBackgroundColor()
@@ -267,7 +267,7 @@ namespace SpriteGrabber
                         frameBox.Image = bmp;
                         getBackgroundColor();
 
-                        AddMessage("Frame: #" + frameCounter.Value.ToString());
+                        AddMessage(SpriteGrabber.Properties.Resources.Frame + frameCounter.Value.ToString());
                     }
 
                     break;
@@ -286,7 +286,7 @@ namespace SpriteGrabber
                         frameBox.Image = bmp;
                         getBackgroundColor();
 
-                        AddMessage("Frame: #" + frameCounter.Value.ToString());
+                        AddMessage(SpriteGrabber.Properties.Resources.Frame + frameCounter.Value.ToString());
                     }
 
                     break;
@@ -307,13 +307,13 @@ namespace SpriteGrabber
                             frameBox.Image = bmp;
                             getBackgroundColor();
 
-                            AddMessage("Frame: #" + frameCounter.Value.ToString());
+                            AddMessage(SpriteGrabber.Properties.Resources.Frame + frameCounter.Value.ToString());
                         }
                     }
                     break;
 
                 default:
-                    AddMessage("Unknown format");
+                    AddMessage(SpriteGrabber.Properties.Resources.UnknownFormat);
                     break;
             }
         }
@@ -354,7 +354,7 @@ namespace SpriteGrabber
                 return;
 
             txtBundleFile.Text = ofdDialog.FileName;
-            AddMessage("Load file: " + ofdDialog.FileName);
+            AddMessage(SpriteGrabber.Properties.Resources.LoadFile + ofdDialog.FileName);
 
             loadFile();
         }
@@ -407,9 +407,9 @@ namespace SpriteGrabber
         {
             SaveFileDialog logSaveDialog = new SaveFileDialog();
 
-            logSaveDialog.Title = "Log file";
+            logSaveDialog.Title = SpriteGrabber.Properties.Resources.LogFileDialogTitle;
             logSaveDialog.DefaultExt = "*.txt";
-            logSaveDialog.Filter = "Text files (*.txt)|*.txt";
+            logSaveDialog.Filter = SpriteGrabber.Properties.Resources.LogFileDialogFilter;
 
             if (logSaveDialog.ShowDialog() != DialogResult.OK)
                 return;
@@ -446,6 +446,8 @@ namespace SpriteGrabber
             string[] data = (string[])e.Data.GetData("FileName");
 
             txtBundleFile.Text = data[0];
+
+            AddMessage(SpriteGrabber.Properties.Resources.LoadFile + data[0]);
 
             loadFile();
         }
