@@ -57,6 +57,7 @@
             this.btnSprites = new System.Windows.Forms.Button();
             this.tmrSplash = new System.Windows.Forms.Timer(this.components);
             this.txtSprites = new System.Windows.Forms.TextBox();
+            this.btnOptions = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbFrame1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFrame2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudFrame1)).BeginInit();
@@ -239,10 +240,18 @@
             this.txtSprites.Name = "txtSprites";
             this.txtSprites.ReadOnly = true;
             // 
+            // btnOptions
+            // 
+            resources.ApplyResources(this.btnOptions, "btnOptions");
+            this.btnOptions.Name = "btnOptions";
+            this.btnOptions.UseVisualStyleBackColor = true;
+            this.btnOptions.Click += new System.EventHandler(this.btnOptions_Click);
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnOptions);
             this.Controls.Add(this.txtSprites);
             this.Controls.Add(this.btnSprites);
             this.Controls.Add(this.btnExchangeFrames);
@@ -303,6 +312,7 @@
         private System.Windows.Forms.ToolStripMenuItem miClear;
         private System.Windows.Forms.Timer tmrSplash;
         private System.Windows.Forms.TextBox txtSprites;
+        private System.Windows.Forms.Button btnOptions;
     }
 }
 

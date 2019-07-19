@@ -468,5 +468,12 @@ namespace SpriteGrabber
 
             e.Effect = DragDropEffects.None;
         }
+
+        private void btnOptions_Click(object sender, EventArgs e)
+        {
+            OptionsForm optionsForm = new OptionsForm();
+
+            optionsForm.ShowDialog();
+        }
     }
 }
